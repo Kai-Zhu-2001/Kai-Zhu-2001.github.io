@@ -1,127 +1,243 @@
-<!DOCTYPE HTML>
-<!--
-	Standout by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
--->
-<html>
-	<head>
-		<title>Kai Zhu</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kai Zhu's Homepage - Ph.D. student in Medicinal Chemistry, Zhejiang University.">
+  <title>Kai Zhu</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #f09228;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      font-size: 20px;
+      margin-bottom: 0.3em;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0));
+      margin: 2em 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1em;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+    .flex .left {
+      flex: 1 1 30%;
+    }
+    .flex .right {
+      flex: 2 1 65%;
+    }
+    .profile-img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    .contact-links {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+    .contact-links a {
+      margin: 0 0.5em;
+    }
+    ul {
+      margin-left: 1.2em;
+      margin-bottom: 1em;
+    }
+    .publication {
+      margin-bottom: 2em;
+    }
+    .publication img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-bottom: 0.5em;
+    }
+    .publication-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      align-items: flex-start;
+    }
+    .publication-details {
+      flex: 1 1 65%;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      margin: 3em 0 1em 0;
+    }
+    @media (max-width: 768px) {
+      .flex {
+        flex-direction: column;
+      }
+      .publication-flex {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
 
-		<!-- Page wrapper -->
-			<div id="page-wrapper">
+  <div class="container">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><a href="index.html">Kai<span> Zhu</span></a></span>
-						<a href="#menu"><span>Menu</span></a>
-					</header>
+    <!-- Header -->
+    <h1>Kai Zhu 「祝凯」</h1>
 
-				<!-- Nav -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#research">Research</a></li>
-								<li><a href="#publications">Publications</a></li>
-							</ul>
-							<a class="close"><span>Close</span></a>
-						</div>
-					</nav>
+    <!-- Profile Section -->
+    <div class="flex">
+      <div class="left">
+        <img src="images/kai_zhu_photo.jpg" alt="Kai Zhu" class="profile-img">
+        <div class="contact-links">
+          | <a href="data/KaiZhu_CV.pdf">CV</a> |
+          <a href="22319143@zju.edu.cn">Email</a> |
+          <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW">Google Scholar</a> |
+          <a href="https://github.com/Kai-Zhu-2001">GitHub</a> |
+          <a href="https://www.linkedin.com/in/%E5%87%AF-%E7%A5%9D-604328351/">LinkedIn</a> |
+        </div>
+      </div>
+      <div class="right">
+        <p>I am a Ph.D. student in Pharmaceutics at <a href="https://www.zju.edu.cn">Zhejiang University</a>, advised by <a href="https://cadd.zju.edu.cn/">Prof. Hou Tingjun</a>. I am also a visiting student at the <a href="https://www.iit.it/">Italian Institute of Technology</a>, working with <a href="https://luigibonati.github.io/">Luigi Bonati</a> and <a href="https://www.iit.it/people-details/-/people/michele-parrinello">Prof. Michele Parrinello</a>.</p>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h1 style="float:center">KAI ZHU</h1>
-							<div class="content">
-								<p><b>Ph.D. Student, Zhejiang University</b> <br />
-								Machine learning · Enhanced sampling · Molecular simulations</p>
-								<ul class="actions special">
-									<li><a href="#footer" class="button large next">About</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        <p>My research focuses on developing machine learning-based enhanced sampling methods and their applications to atomic systems.</p>
 
-				<!-- Footer -->
-					<section id="footer" class="wrapper">
-						<div class="inner">
-							<div class="split">
-								<div class="content">
-									<header>
-										<h2>About</h2>
-									</header>
-									<p><span class="image left" style="width: 30%"><img src="images/kai_zhu_photo.jpg" alt="Photo of Kai Zhu" /></span>
-										I am a Ph.D. student in Medicinal Chemistry with a strong interest in developing and applying machine learning methods to enhance molecular simulations.
-									</p>	
-									<p>
-										Currently pursuing my Ph.D. at <b>Zhejiang University, School of Pharmacy</b> (2023-2028) under the supervision of <b>Prof. Hou Tingjun</b>, I am also privileged to be a visiting student at the <b>Italian Institute of Technology</b>, working with <b>Prof. Luigi Bonati</b> and <b>Prof. Michele Parrinello</b>.
-									</p>
-									<p>
-										My research focuses on machine learning-based enhanced sampling methods for molecular simulations. I'm developing computational approaches to accelerate the exploration of complex molecular systems and rare events, with applications in drug discovery and materials science. My work combines advanced sampling techniques with deep learning to overcome the timescale limitations of conventional molecular dynamics.
-									</p>
+        <h3>Research Interests:</h3>
+        <ul>
+          <li>Atomistic simulations</li>
+          <li>Enhanced sampling </li>
+          <li>Machine learning</li>
+          <li>Drug design</li>
+        </ul>
 
-									<h5>Education</h5>
-									<p> 2023-2028 (expected) &emsp;Ph.D. in Medicinal Chemistry, Zhejiang University, China<br>
-										2019-2023 &emsp;&emsp;&emsp;&emsp;&ensp;B.Sc. in Pharmaceutical Sciences, [Your University]
+        <p>Email: 22319143@zju.edu.cn</p>
+      </div>
+    </div>
 
-									<h5>Research Experience</h5>
-									<p> 2025-present &emsp;Visiting Student, Italian Institute of Technology, Genoa, Italy<br>
-										2023-present &emsp;Graduate Researcher, Zhejiang University, Hangzhou, China
+    <hr>
 
-									<h5>Supervisors</h5>
-									<p> Prof. Hou Tingjun (Zhejiang University)<br>
-										Prof. Luigi Bonati (Italian Institute of Technology)<br>
-										Prof. Michele Parrinello (Italian Institute of Technology)
+    <!-- Publications Section -->
+    <h2>Publications</h2>
+	<!-- Machine Learning Enhanced Sampling -->
+	<h3 style="margin-top:20px;">Machine Learning Enhanced Sampling</h3>
+	<div class="publication-flex" style="display:flex; align-items:flex-start; gap:20px; margin-bottom:20px;">
+	<div class="left" style="flex:0 0 30%;">
+		<img src="images/publication/self-supervised.jpg" alt="Self-Supervised" style="width:100%; border-radius:15px;">
+	</div>
+	<div class="publication-details" style="flex:1;">
+		<h3>Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems</h3>
+		<p>Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br>
+		arXiv preprint arXiv:2505.18671</p>
+		<p>
+		<a href="https://arxiv.org/abs/2505.18671" target="_blank">PDF</a> | 
+		<a href="javascript:toggleAbstract('evolution_operator_abs')">Abstract</a> |
+		<a href="https://arxiv.org/abs/2505.18671">arXiv</a> 
+		</p>
 
-									</p>
-									<ul class="actions">
-										<li><a href="#research" class="button next">Research</a></li>
-										<li><a href="#publications" class="button next">Publications</a></li>
-									</ul>
-								</div>
-								<ul class="contact-icons">
-									<li><a href="#" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
-									<li><a href="#" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" target="_blank" class="icon brands alt fa-github-alt"><span class="label">GitHub</span></a></li>
-									<li><a href="#" target="_blank" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="mailto:your-email@example.com" class="icon solid alt fa-envelope"><span class="label">Contact</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+		<!-- Abstract -->
+		<div id="evolution_operator_abs" style="display:none; margin-top:10px; padding:10px; border:1px solid #ccc; border-radius:5px;">
+		We introduce an encoder-only approach to learn the evolution operators of large-scale non-linear dynamical systems, such as those describing complex natural phenomena. Evolution operators are particularly well-suited for analyzing systems that exhibit complex spatio-temporal patterns and have become a key analytical tool across various scientific communities. As terabyte-scale weather datasets and simulation tools capable of running millions of molecular dynamics steps per day are becoming commodities, our approach provides an effective tool to make sense of them from a data-driven perspective. The core of it lies in a remarkable connection between self-supervised representation learning methods and the recently established learning theory of evolution operators. To show the usefulness of the proposed method, we test it across multiple scientific domains: explaining the folding dynamics of small proteins, the binding process of drug-like molecules in host sites, and autonomously finding patterns in climate data. Code and data to reproduce the experiments are made available open source.
+		</div>
+	</div>
+	</div>
 
-				<!-- Publications Section -->
-					<section id="publications" class="wrapper style1">
-						<div class="inner">
-							<h2>Publications</h2>
-							<p><em>Publications will be available here soon.</em></p>
-						</div>
-					</section>
+	<!-- Machine Learning Force Field -->
+	<h3 style="margin-top:20px;">Machine Learning Force Fields</h3>
+	<div class="publication-flex" style="display:flex; align-items:flex-start; gap:20px; margin-bottom:20px;">
+	<div class="left" style="flex:0 0 30%;">
+		<img src="images/publication/LiTen.jpg" alt="LiTEN" style="width:100%; border-radius:15px;">
+	</div>
+	<div class="publication-details" style="flex:1;">
+		<h3>A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention </h3>
+		<p>Qun Su*, <strong>Kai Zhu</strong>*, Qiaolin Gou* , Jintu Zhang, Renling Hu, Yurong Li, Yongze Wang, Hui Zhang, Ziyi You, Linlong Jiang, Yu Kang, Jike Wang, Chang-Yu Hsieh, Tingjun Hou<br>
+		arXiv preprint arXiv:2507.00884</p>
+		<p>
+		<a href="https://arxiv.org/abs/2507.00884" target="_blank">PDF</a> | 
+		<a href="javascript:toggleAbstract('LiTEN_abs')">Abstract</a> |
+		<a href="https://arxiv.org/abs/2507.00884">arXiv</a> 
+		</p>
 
-				<!-- Copyright -->
-					<section class="wrapper style2 copyright">
-						<div class="inner">
-							&copy; Kai Zhu 2023-2025
-						</div>
-					</section>
+		<!-- Abstract -->
+		<div id="LiTEN_abs" style="display:none; margin-top:10px; padding:10px; border:1px solid #ccc; border-radius:5px;">
+		Accurate atomistic biomolecular simulations are vital for disease mechanism understanding, drug discovery, and biomaterial design, but existing simulation methods exhibit significant limitations. Classical force fields are efficient but lack accuracy for transition states and fine conformational details critical in many chemical and biological processes. Quantum Mechanics (QM) methods are highly accurate but computationally infeasible for large-scale or long-time simulations. AI-based force fields (AIFFs) aim to achieve QM-level accuracy with efficiency but struggle to balance many-body modeling complexity, accuracy, and speed, often constrained by limited training data and insufficient validation for generalizability. To overcome these challenges, we introduce LiTEN, a novel equivariant neural network with Tensorized Quadrangle Attention (TQA). TQA efficiently models three- and four-body interactions with linear complexity by reparameterizing high-order tensor features via vector operations, avoiding costly spherical harmonics. Building on LiTEN, LiTEN-FF is a robust AIFF foundation model, pre-trained on the extensive nablaDFT dataset for broad chemical generalization and fine-tuned on SPICE for accurate solvated system simulations. LiTEN achieves state-of-the-art (SOTA) performance across most evaluation subsets of rMD17, MD22, and Chignolin, outperforming leading models such as MACE, NequIP, and EquiFormer. LiTEN-FF enables the most comprehensive suite of downstream biomolecular modeling tasks to date, including QM-level conformer searches, geometry optimization, and free energy surface construction, while offering 10x faster inference than MACE-OFF for large biomolecules (~1000 atoms). In summary, we present a physically grounded, highly efficient framework that advances complex biomolecular modeling, providing a versatile foundation for drug discovery and related applications.
+		</div>
+	</div>
+	</div>
 
-			</div>
+	<!-- Machine Learning Drug Design -->
+	<h3 style="margin-top:20px;">Machine Learning Drug Design</h3>
+	<div class="publication-flex" style="display:flex; align-items:flex-start; gap:20px; margin-bottom:20px;">
+	<div class="left" style="flex:0 0 30%;">
+		<img src="images/publication/pro-pro_docking.jpg" alt="Protein-Protein Docking" style="width:100%; border-radius:15px;">
+	</div>
+	<div class="publication-details" style="flex:1;">
+		<h3>From Traditional Methods to Deep Learning Approaches: Advances in Protein–Protein Docking</h3>
+		<p>Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Hui Zhang, Chao Shen, Tingjun Hou<br>
+		Wiley Interdisciplinary Reviews: Computational Molecular Science, 2025, 15(2), e70016</p>
+		<p>
+		<a href="https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wcms.70016" target="_blank">PDF</a> | 
+		<a href="javascript:toggleAbstract('protein_docking_abs')">Abstract</a>
+		</p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Abstract -->
+		<div id="protein_docking_abs" style="display:none; margin-top:10px; padding:10px; border:1px solid #ccc; border-radius:5px;">
+		Protein–protein interactions play a crucial role in human biological processes, and deciphering their structural information and interaction patterns is essential for drug development. The high costs of experimental structure determination have brought computational protein–protein docking methods into the spotlight. Traditional docking algorithms, which hinge on a sampling‐scoring framework, heavily rely on extensive sampling of candidate poses and customized scoring functions based on the geometric and chemical compatibility between proteins. However, these methods face challenges related to sampling efficiency and stability. The advent of deep learning (DL) has ushered in data‐driven docking methods that demonstrate significant advantages, particularly boosting the efficiency of protein–protein docking. We systematically review the historical development of protein–protein docking from traditional approaches to DL techniques and provide insights into emerging technologies in this field. Moreover, we summarize the commonly used datasets and evaluation metrics in protein–protein docking. We expect that this review can offer valuable guidance for the development of more efficient protein–protein docking algorithms.
+		</div>
+	</div>
+	</div>
 
-	</body>
+	<script>
+	function toggleAbstract(id) {
+	var abs = document.getElementById(id);
+	abs.style.display = (abs.style.display === "none") ? "block" : "none";
+	}
+	</script>
+
+
+    <hr>
+
+  </div>
+
+  <footer>
+    Website template adapted from <a href="http://www.cs.cmu.edu/~tairanh/">Tairan He</a> | &copy; Kai Zhu 2023-2025
+  </footer>
+
+</body>
 </html>
