@@ -160,14 +160,14 @@
         <div class="publication-details">
           <h3>Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications</h3>
           <p class="pub-meta"><strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou, Luigi Bonati<br />
-          arXiv preprint arXiv:2509.04291</p>
+          Chem. Rev. 2025, XXXX, XXX, XXX-XXX</p>
           <p class="pub-links">
-            <a href="https://arxiv.org/pdf/2509.04291" target="_blank" rel="noopener">PDF</a>
+            <a href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700" target="_blank" rel="noopener">PDF</a>
             <a class="btn-link" onclick="toggleAbstract('MLES_abs')">Abstract</a>
             <a href="https://arxiv.org/abs/2509.04291" target="_blank" rel="noopener">arXiv</a>
           </p>
           <div id="MLES_abs" class="abstract">
-            We introduce an encoder-only approach to learn the evolution operators of large-scale non-linear dynamical systems, such as those describing complex natural phenomena. Evolution operators are particularly well-suited for analyzing systems that exhibit complex spatio-temporal patterns and have become a key analytical tool across various scientific communities. As terabyte-scale weather datasets and simulation tools capable of running millions of molecular dynamics steps per day are becoming commodities, our approach provides an effective tool to make sense of them from a data-driven perspective. The core of it lies in a remarkable connection between self-supervised representation learning methods and the recently established learning theory of evolution operators. To show the usefulness of the proposed method, we test it across multiple scientific domains: explaining the folding dynamics of small proteins, the binding process of drug-like molecules in host sites, and autonomously finding patterns in climate data. Code and data to reproduce the experiments are made available open source.
+          Molecular dynamics simulations hold great promise for providing insight into the microscopic behavior of complex molecular systems. However, their effectiveness is often constrained by long timescales associated with rare events. Enhanced sampling methods have been developed to address these challenges, and recent years have seen a growing integration with machine learning techniques. This Review provides a comprehensive overview of how they are reshaping the field, with a particular focus on the data-driven construction of collective variables. Furthermore, these techniques have also improved biasing schemes and unlocked novel strategies via reinforcement learning and generative approaches. In addition to methodological advances, we highlight applications spanning different areas, such as biomolecular processes, ligand binding, catalytic reactions, and phase transitions. We conclude by outlining future directions aimed at enabling more automated strategies for rareevent sampling.
           </div>
         </div>
       </article>
@@ -218,6 +218,24 @@
 
       <article class="publication-flex">
         <div class="left">
+          <img src="images/publication/pro-pro_docking_framework.jpg" alt="Benchmarking framework for protein–protein docking" class="pub-thumb" />
+        </div>
+        <div class="publication-details">
+          <h3>Revisiting Protein–Protein Docking: A Systematic Evaluation Framework</h3>
+          <p class="pub-meta">Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Ying Wang, Yu Kang, Tingjun Hou<br />
+          J. Chem. Inf. Model. 2025, 65, 19, 10573–10587</p>
+          <p class="pub-links">
+            <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c01399" target="_blank" rel="noopener">PDF</a>
+            <a class="btn-link" onclick="toggleAbstract('protein_evo_abs')">Abstract</a>
+          </p>
+          <div id="protein_evo_abs" class="abstract">
+            Protein–protein interactions play pivotal roles in a wide range of biological processes. Determining the atomic-level structures of protein–protein complexes is indispensable for elucidating macromolecular interaction mechanisms and advancing structure-based drug design. Protein–protein docking, as one of the leading computational approaches for predicting complex structures, has seen considerable progress but requires rigorous evaluation in practical applications. In this study, we proposed a comprehensive benchmarking framework to evaluate 11 docking methods spanning traditional (HDOCK, PatchDock, PIPER, ZDOCK) and deep learning (DL)-based (EquiDock, ElliDock, EBMDock, GeoDock, DiffDock-PP, AlphaFold-Multimer, AlphaFold3) approaches. Our framework incorporates the classical DockingBenchmark 5.5 data set for evaluating flexible docking, introduces a newly curated data set (AACBench) for antibody–antigen complex docking, and establishes the PPCBench data set to examine the out-of-distribution (OOD) generalization capabilities of DL-based methods. In docking against apo structures, AlphaFold3 achieves a superior top-5 success rate of 77.98%, whereas the traditional approach HDOCK reaches merely 12.84%, despite its highest top-5 success rate of 85.24% when docking against holo structures. For antibody–antigen docking, AlphaFold3 remains the most accurate method (top-5 success rate: 31.78%) and substantially outperforms AlphaFold-Multimer in modeling the CDR-H3 loop. In OOD generalization tests, all DL-based models exhibit markedly reduced performance on the PPCBench data set. Overall, our work establishes a unified benchmarking framework that enables systematic evaluation of docking methods across diverse tasks and provides critical insights into the strengths and limitations of current docking strategies, thereby informing future developments in protein–protein docking research.
+          </div>
+        </div>
+      </article>
+
+      <article class="publication-flex">
+        <div class="left">
           <img src="images/publication/pro-pro_docking.jpg" alt="Protein–protein docking illustration" class="pub-thumb" />
         </div>
         <div class="publication-details">
@@ -234,23 +252,6 @@
         </div>
       </article>
 
-      <article class="publication-flex">
-        <div class="left">
-          <img src="images/publication/pro-pro_docking_framework.jpg" alt="Benchmarking framework for protein–protein docking" class="pub-thumb" />
-        </div>
-        <div class="publication-details">
-          <h3>Revisiting Protein–Protein Docking: A Systematic Evaluation Framework</h3>
-          <p class="pub-meta">Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Ying Wang, Yu Kang, Tingjun Hou<br />
-          J. Chem. Inf. Model. 2025, XXXX, XXX, XXX–XXX</p>
-          <p class="pub-links">
-            <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c01399" target="_blank" rel="noopener">PDF</a>
-            <a class="btn-link" onclick="toggleAbstract('protein_docking_abs')">Abstract</a>
-          </p>
-          <div id="protein_evo_abs" class="abstract">
-            Protein–protein interactions play pivotal roles in a wide range of biological processes. Determining the atomic-level structures of protein–protein complexes is indispensable for elucidating macromolecular interaction mechanisms and advancing structure-based drug design. Protein–protein docking, as one of the leading computational approaches for predicting complex structures, has seen considerable progress but requires rigorous evaluation in practical applications. In this study, we proposed a comprehensive benchmarking framework to evaluate 11 docking methods spanning traditional (HDOCK, PatchDock, PIPER, ZDOCK) and deep learning (DL)-based (EquiDock, ElliDock, EBMDock, GeoDock, DiffDock-PP, AlphaFold-Multimer, AlphaFold3) approaches. Our framework incorporates the classical DockingBenchmark 5.5 data set for evaluating flexible docking, introduces a newly curated data set (AACBench) for antibody–antigen complex docking, and establishes the PPCBench data set to examine the out-of-distribution (OOD) generalization capabilities of DL-based methods. In docking against apo structures, AlphaFold3 achieves a superior top-5 success rate of 77.98%, whereas the traditional approach HDOCK reaches merely 12.84%, despite its highest top-5 success rate of 85.24% when docking against holo structures. For antibody–antigen docking, AlphaFold3 remains the most accurate method (top-5 success rate: 31.78%) and substantially outperforms AlphaFold-Multimer in modeling the CDR-H3 loop. In OOD generalization tests, all DL-based models exhibit markedly reduced performance on the PPCBench data set. Overall, our work establishes a unified benchmarking framework that enables systematic evaluation of docking methods across diverse tasks and provides critical insights into the strengths and limitations of current docking strategies, thereby informing future developments in protein–protein docking research.
-          </div>
-        </div>
-      </article>
     </section>
 
     <hr />
