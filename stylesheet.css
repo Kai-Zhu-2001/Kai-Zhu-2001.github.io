@@ -259,3 +259,43 @@ papertitle a:hover {
   color: #ffffff;
   background: #4f74d9;
 }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 2.4rem;
+  align-items: start;
+}
+
+.profile-side {
+  text-align: center;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.1rem auto;
+  padding: 8px;
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
+}
+
+@media (max-width: 820px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 1rem auto;
+    padding: 7px;
+  }
+}

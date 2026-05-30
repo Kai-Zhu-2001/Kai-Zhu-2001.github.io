@@ -108,16 +108,27 @@
 
     .profile-grid {
       display: grid;
-      grid-template-columns: minmax(220px, 300px) 1fr;
-      gap: 2rem;
+      grid-template-columns: 230px 1fr;
+      gap: 2.4rem;
       align-items: start;
     }
 
+    .profile-side {
+      text-align: center;
+    }
+
     .profile-img {
-      width: 100%;
-      border-radius: 20px;
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 50%;
       display: block;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      margin: 0 auto 1.1rem auto;
+      padding: 8px;
+      background: #ffffff;
+      border: 3px solid #ffffff;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
     }
 
     .contact-links {
@@ -442,8 +453,9 @@
       }
 
       .profile-img {
-        max-width: 320px;
-        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1rem auto;
       }
 
       .publication-flex {
@@ -471,24 +483,24 @@
     <section class="top-card" aria-label="Profile section">
       <h1>Kai Zhu 「祝凯」</h1>
 
-      <div class="profile-grid">
-        <div>
-          <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
+  <div class="profile-grid">
+    <div class="profile-side">
+      <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
 
-          <nav class="contact-links" aria-label="Contact links">
-            |
-            <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
-            |
-            <a href="mailto:22319143@zju.edu.cn">Email</a>
-            |
-            <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
-            |
-            <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
-            |
-            <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
-            |
-          </nav>
-        </div>
+      <nav class="contact-links" aria-label="Contact links">
+        |
+        <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
+        |
+        <a href="mailto:22319143@zju.edu.cn">Email</a>
+        |
+        <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
+        |
+        <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
+        |
+        <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
+        |
+      </nav>
+    </div>
 
         <div class="bio-text">
           <p>
