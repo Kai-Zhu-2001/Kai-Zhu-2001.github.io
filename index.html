@@ -3,288 +3,713 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kai Zhu's Homepage - Ph.D. student in Medicinal Chemistry, Zhejiang University." />
+  <meta name="description" content="Kai Zhu's Homepage - Ph.D. student in Pharmaceutical Science, Zhejiang University." />
   <title>Kai Zhu</title>
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    /* Reset */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    :root {
+      --bg: #f7f8fb;
+      --card-bg: #ffffff;
+      --text: #2f3437;
+      --muted: #5f6872;
+      --light-muted: #7b8490;
+      --blue: #1772d0;
+      --blue-light: #edf6ff;
+      --orange: #f09228;
+      --border: #e7eaf0;
+      --shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+      --shadow-hover: 0 12px 34px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(23, 114, 208, 0.08), transparent 34%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      color: var(--text);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    a { color: #1772d0; text-decoration: none; }
-    a:hover { color: #f09228; }
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
 
-    h1, h2, h3 { font-weight: 600; }
-    h1 { font-size: 38px; text-align: center; margin-bottom: 0.5em; }
-    h2 { font-size: 28px; margin-bottom: 0.5em; }
-    h3 { font-size: 20px; margin: 0 0 0.3em 0; }
+    a:hover {
+      color: var(--orange);
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      margin: 0 0 0.65rem 0;
+      letter-spacing: 0.01em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 0.9rem 0;
+      letter-spacing: 0.01em;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 0 0 0.35rem 0;
+    }
 
     hr {
-      border: none; height: 1px;
-      background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0));
-      margin: 2em 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, rgba(23,114,208,0), rgba(23,114,208,0.22), rgba(23,114,208,0));
+      margin: 2.4rem 0;
     }
 
-    .container { max-width: 1000px; margin: auto; padding: 1em; }
-
-    .flex { display: flex; flex-wrap: wrap; gap: 2.5em; }
-    .flex .left { flex: 1 1 30%; min-width: 240px; }
-    .flex .right { flex: 2 1 65%; min-width: 280px; }
-
-    .profile-img { width: 100%; border-radius: 15px; display: block; }
-
-    .contact-links { text-align: center; margin-top: 0.8em; font-size: 0.98rem; }
-    .contact-links a { margin: 0 0.5em; }
-
-    /* Right column paragraph spacing */
-    .flex .right p {
-      line-height: 1.8;
-      margin: 0 0 1rem 0; /* space between paragraphs */
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 1rem;
     }
-    .flex .right p + p { margin-top: 0.2rem; }
 
-    ul { margin: 0.3rem 0 1rem 1.2em; }
-    li { margin-bottom: 0.25rem; }
+    .top-card {
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
 
-    .publication { margin-bottom: 2em; }
-    .pub-thumb { width: 100%; max-width: 300px; border-radius: 15px; display: block; }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
 
-    .publication-flex { display: flex; flex-wrap: wrap; gap: 1.25em; align-items: flex-start; margin-bottom: 20px; }
-    .publication-flex .left { flex: 0 0 30%; min-width: 220px; }
-    .publication-details { flex: 1 1 65%; }
+    .profile-img {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
 
-    .pub-meta { color: #555; font-size: 0.98rem; }
-    .pub-links a { margin-right: 10px; }
+    .contact-links {
+      text-align: center;
+      margin-top: 0.95rem;
+      font-size: 0.96rem;
+      color: var(--light-muted);
+    }
 
-    .abstract { display: none; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
+    .contact-links a {
+      margin: 0 0.38rem;
+      font-weight: 600;
+    }
 
-    .btn-link { cursor: pointer; }
+    .bio-text p {
+      margin: 0 0 1rem 0;
+      line-height: 1.78;
+      color: var(--text);
+    }
 
-    footer { text-align: center; font-size: 0.9em; color: #666; margin: 3em 0 1em 0; }
+    .bio-text p:last-of-type {
+      margin-bottom: 1.2rem;
+    }
 
-    @media (max-width: 768px) {
-      .flex { flex-direction: column; gap: 1.2em; }
-      .publication-flex { flex-direction: column; }
-      .flex .right p { margin-bottom: 0.8rem; }
+    .interest-title {
+      margin-top: 1.3rem;
+      color: var(--text);
+    }
+
+    .research-list {
+      margin: 0.35rem 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .research-list li {
+      position: relative;
+      margin: 0.45rem 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .research-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .pub-legend {
+      margin: 0 0 1.35rem 0;
+      color: var(--light-muted);
+      font-size: 0.96rem;
+    }
+
+    .subsection-title {
+      position: relative;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.55rem;
+      color: var(--text);
+      font-size: 1.28rem;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .subsection-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 72px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 999px;
+    }
+
+    /* Featured publications */
+    .publication-flex {
+      display: grid;
+      grid-template-columns: minmax(190px, 250px) 1fr;
+      gap: 1.35rem;
+      align-items: start;
+      margin-bottom: 1.25rem;
+      padding: 1.15rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .publication-flex:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(23, 114, 208, 0.25);
+    }
+
+    .pub-thumb {
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 1.35 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid #edf0f5;
+      background: #f3f5f8;
+    }
+
+    .publication-details h3 {
+      margin: 0 0 0.55rem 0;
+      font-size: 1.28rem;
+      line-height: 1.32;
+      font-weight: 700;
+    }
+
+    .publication-details h3 a,
+    .publication-details h3 a:visited,
+    .publication-other h3 a,
+    .publication-other h3 a:visited {
+      color: var(--blue) !important;
+      text-decoration: none !important;
+    }
+
+    .publication-details h3 a:hover,
+    .publication-other h3 a:hover {
+      color: var(--orange) !important;
+    }
+
+    .pub-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.48;
+    }
+
+    .pub-meta strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.75rem 0 0 0;
+    }
+
+    .pub-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.18rem 0.66rem;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .pub-links a:hover {
+      background: #fff2e4;
+      color: var(--orange);
+      transform: translateY(-1px);
+    }
+
+    .btn-link {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .abstract {
+      display: none;
+      margin-top: 0.85rem;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--blue);
+      border-radius: 10px;
+      background: #fbfcff;
+      color: #444b53;
+      font-size: 0.95rem;
+      line-height: 1.58;
+    }
+
+    /* Google Scholar badge */
+    .scholar-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 0.7rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #dbe4f3;
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .scholar-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.11);
+    }
+
+    .scholar-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.58rem;
+      color: #323a44;
+      background: #fffdf2;
+    }
+
+    .scholar-icon {
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #78adff 0%, #3869d4 100%);
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .scholar-icon::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 5px;
+      width: 11px;
+      height: 7px;
+      background: #f7d55a;
+      clip-path: polygon(50% 0%, 100% 45%, 80% 45%, 80% 100%, 20% 100%, 20% 45%, 0% 45%);
+    }
+
+    .scholar-count {
+      padding: 0.38rem 0.58rem;
+      color: #ffffff;
+      background: #4f74d9;
+    }
+
+    /* Other publications */
+    .others-list {
+      margin-top: 0.25rem;
+      padding: 0.75rem 1rem 0.2rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .publication-other {
+      position: relative;
+      padding: 0.2rem 0 1rem 1.15rem;
+      margin: 0 0 1rem 0;
+      border-bottom: 1px solid #eef1f6;
+    }
+
+    .publication-other:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .publication-other::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 4px rgba(23, 114, 208, 0.11);
+    }
+
+    .publication-other h3 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.05rem;
+      line-height: 1.36;
+      font-weight: 700;
+    }
+
+    .publication-other .pub-meta {
+      margin: 0;
+      line-height: 1.42;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--light-muted);
+      margin: 3rem 0 1rem 0;
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .top-card {
+        padding: 1.2rem;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-img {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .publication-flex {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-thumb {
+        max-width: 100%;
+        aspect-ratio: 1.7 / 1;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <!-- Header -->
-    <h1>Kai Zhu 「祝凯」</h1>
+    <section class="top-card" aria-label="Profile section">
+      <h1>Kai Zhu 「祝凯」</h1>
 
-    <!-- Profile Section -->
-    <div class="flex" aria-label="Profile section">
-      <div class="left">
-        <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
-        <nav class="contact-links" aria-label="Contact links">
-          |
-          <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
-          |
-          <a href="mailto:22319143@zju.edu.cn">Email</a>
-          |
-          <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
-          |
-          <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
-          |
-          <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
-          |
-        </nav>
+      <div class="profile-grid">
+        <div>
+          <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
+
+          <nav class="contact-links" aria-label="Contact links">
+            |
+            <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
+            |
+            <a href="mailto:22319143@zju.edu.cn">Email</a>
+            |
+            <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
+            |
+            <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
+            |
+            <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
+            |
+          </nav>
+        </div>
+
+        <div class="bio-text">
+          <p>
+            I am a Ph.D. student in Pharmaceutical Science at
+            <a href="https://www.zju.edu.cn" target="_blank" rel="noopener">Zhejiang University</a>, advised by
+            <a href="https://cadd.zju.edu.cn/" target="_blank" rel="noopener">Prof. Hou Tingjun</a>.
+            I am also a visiting student at the
+            <a href="https://www.iit.it/" target="_blank" rel="noopener">Italian Institute of Technology</a>, working with
+            <a href="https://luigibonati.github.io/" target="_blank" rel="noopener">Luigi Bonati</a> and
+            <a href="https://www.iit.it/people-details/-/people/michele-parrinello" target="_blank" rel="noopener">Prof. Michele Parrinello</a>.
+          </p>
+
+          <p>
+            My research focuses on developing machine learning–based enhanced sampling methods and their applications to atomic systems.
+          </p>
+
+          <p>
+            I enjoy designing new algorithms and making them accessible through open-source software,
+            such as <a href="https://github.com/luigibonati/mlcolvar" target="_blank" rel="noopener">mlcolvar</a>.
+          </p>
+
+          <h3 class="interest-title">Research Interests</h3>
+          <ul class="research-list">
+            <li>Machine-learning collective variables for enhanced sampling</li>
+            <li>Conformational sampling of intrinsically disordered proteins</li>
+            <li>Machine-learning potentials for rare-event simulations</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="right">
-        <p>
-          I am a Ph.D. student in Pharmaceutical Science at
-          <a href="https://www.zju.edu.cn" target="_blank" rel="noopener">Zhejiang University</a>, advised by
-          <a href="https://cadd.zju.edu.cn/" target="_blank" rel="noopener">Prof. Hou Tingjun</a>.
-          I am also a visiting student at the
-          <a href="https://www.iit.it/" target="_blank" rel="noopener">Italian Institute of Technology</a>, working with
-          <a href="https://luigibonati.github.io/" target="_blank" rel="noopener">Luigi Bonati</a> and
-          <a href="https://www.iit.it/people-details/-/people/michele-parrinello" target="_blank" rel="noopener">Prof. Michele Parrinello</a>.
-        </p>
-
-        <p>
-          My research focuses on developing machine learning–based enhanced sampling methods and their applications to atomic systems.
-        </p>
-
-        <p>
-          I enjoy designing new algorithms and making them accessible through open-source software,
-          such as <a href="https://github.com/luigibonati/mlcolvar" target="_blank" rel="noopener">mlcolvar</a>.
-        </p>
-
-        <h3>Research Interests</h3>
-        <ul>
-          <li>Machine-learning collective variables for enhanced sampling</li>
-          <li>Conformational sampling of intrinsically disordered proteins</li>
-          <li>Machine-learning potentials for rare-event simulations</li>
-        </ul>
-
-      </div>
-    </div>
+    </section>
 
     <hr />
 
-    <!-- Publications Section -->
     <section aria-label="Publications">
-      <h2>Publications</h2>
+      <div class="section-head">
+        <h2>Publications</h2>
+      </div>
 
-    <!-- Legend for author symbols -->
-    <p class="pub-legend" style="margin: 0.4rem 0 1.2rem; color:#555; font-size:0.95rem;">
-      <span title="Equal contribution">†</span> Equal contribution
-      <!-- If you later need corresponding author, use ‡ and add:
-      &nbsp;&nbsp; <span title="Corresponding author">‡</span> Corresponding author
-      -->
-    </p>
+      <p class="pub-legend">
+        <span title="Equal contribution">†</span> Equal contribution
+      </p>
 
-      <!-- Machine Learning Enhanced Sampling -->
-      <h3 style="margin-top:20px;">Machine Learning Enhanced Sampling</h3>
+      <h3 class="subsection-title">Featured work</h3>
 
       <article class="publication-flex">
-        <div class="left">
+        <div>
           <img src="images/publication/MLES.png" alt="Cover image for MLES review" class="pub-thumb" />
         </div>
+
         <div class="publication-details">
-          <h3>Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications</h3>
-          <p class="pub-meta"><strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou, Luigi Bonati<br />
-          Chem. Rev. 2026, 126, 1, 671–713</p>
+          <h3>
+            <a href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700" target="_blank" rel="noopener">
+              Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications
+            </a>
+          </h3>
+
+          <p class="pub-meta">
+            <strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou, Luigi Bonati<br />
+            <em>Chem. Rev.</em> 2026, 126, 1, 671-713
+          </p>
+
           <p class="pub-links">
-            <a href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700" target="_blank" rel="noopener">PDF</a>
             <a class="btn-link" onclick="toggleAbstract('MLES_abs')">Abstract</a>
             <a href="https://arxiv.org/abs/2509.04291" target="_blank" rel="noopener">arXiv</a>
           </p>
+
+          <a class="scholar-badge"
+             href="https://scholar.google.com/scholar?q=Enhanced+Sampling+in+the+Age+of+Machine+Learning+Algorithms+and+Applications"
+             target="_blank"
+             rel="noopener"
+             data-title="Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications"
+             aria-label="Google Scholar citations for Enhanced Sampling in the Age of Machine Learning">
+            <span class="scholar-left">
+              <span class="scholar-icon"></span>
+              scholar
+            </span>
+            <span class="scholar-count">30</span>
+          </a>
+
           <div id="MLES_abs" class="abstract">
-          Molecular dynamics simulations hold great promise for providing insight into the microscopic behavior of complex molecular systems. However, their effectiveness is often constrained by long timescales associated with rare events. Enhanced sampling methods have been developed to address these challenges, and recent years have seen a growing integration with machine learning techniques. This Review provides a comprehensive overview of how they are reshaping the field, with a particular focus on the data-driven construction of collective variables. Furthermore, these techniques have also improved biasing schemes and unlocked novel strategies via reinforcement learning and generative approaches. In addition to methodological advances, we highlight applications spanning different areas, such as biomolecular processes, ligand binding, catalytic reactions, and phase transitions. We conclude by outlining future directions aimed at enabling more automated strategies for rareevent sampling.
+            Molecular dynamics simulations hold great promise for providing insight into the microscopic behavior of complex molecular systems. However, their effectiveness is often constrained by long timescales associated with rare events. Enhanced sampling methods have been developed to address these challenges, and recent years have seen a growing integration with machine learning techniques. This Review provides a comprehensive overview of how they are reshaping the field, with a particular focus on the data-driven construction of collective variables. Furthermore, these techniques have also improved biasing schemes and unlocked novel strategies via reinforcement learning and generative approaches. In addition to methodological advances, we highlight applications spanning different areas, such as biomolecular processes, ligand binding, catalytic reactions, and phase transitions. We conclude by outlining future directions aimed at enabling more automated strategies for rareevent sampling.
           </div>
         </div>
       </article>
 
       <article class="publication-flex">
-        <div class="left">
+        <div>
           <img src="images/publication/self-supervised.jpg" alt="Illustration of self-supervised evolution operator learning" class="pub-thumb" />
         </div>
+
         <div class="publication-details">
-          <h3>Self‑Supervised Evolution Operator Learning for High‑Dimensional Dynamical Systems</h3>
-          <p class="pub-meta">Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
-          International Conference on Learning Representations (2026)</p>
+          <h3>
+            <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">
+              Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
+            </a>
+          </h3>
+
+          <p class="pub-meta">
+            Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
+            <em>International Conference on Learning Representations</em> (2026)
+          </p>
+
           <p class="pub-links">
-            <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">PDF</a>
             <a class="btn-link" onclick="toggleAbstract('evolution_operator_abs')">Abstract</a>
             <a href="https://arxiv.org/abs/2505.18671" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/pietronvll/encoderops" target="_blank" rel="noopener">Code</a>
           </p>
+
+          <a class="scholar-badge"
+             href="https://scholar.google.com/scholar?q=Self-Supervised+Evolution+Operator+Learning+for+High-Dimensional+Dynamical+Systems"
+             target="_blank"
+             rel="noopener"
+             data-title="Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems"
+             aria-label="Google Scholar citations for Self-Supervised Evolution Operator Learning">
+            <span class="scholar-left">
+              <span class="scholar-icon"></span>
+              scholar
+            </span>
+            <span class="scholar-count">2</span>
+          </a>
+
           <div id="evolution_operator_abs" class="abstract">
             We introduce an encoder-only approach to learn the evolution operators of large-scale non-linear dynamical systems, such as those describing complex natural phenomena. Evolution operators are particularly well-suited for analyzing systems that exhibit complex spatio-temporal patterns and have become a key analytical tool across various scientific communities. As terabyte-scale weather datasets and simulation tools capable of running millions of molecular dynamics steps per day are becoming commodities, our approach provides an effective tool to make sense of them from a data-driven perspective. The core of it lies in a remarkable connection between self-supervised representation learning methods and the recently established learning theory of evolution operators. To show the usefulness of the proposed method, we test it across multiple scientific domains: explaining the folding dynamics of small proteins, the binding process of drug-like molecules in host sites, and autonomously finding patterns in climate data. Code and data to reproduce the experiments are made available open source.
           </div>
         </div>
       </article>
 
-      <!-- Machine Learning Force Field -->
-      <h3 style="margin-top:20px;">Machine Learning Force Fields</h3>
-
       <article class="publication-flex">
-        <div class="left">
+        <div>
           <img src="images/publication/LiTen.jpg" alt="Illustration for LiTEN work" class="pub-thumb" />
         </div>
+
         <div class="publication-details">
-          <h3>A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention</h3>
-          <p class="pub-meta">Qun Su†, <strong>Kai Zhu†</strong>, Qiaolin Gou†, Jintu Zhang, Renling Hu, Yurong Li, Yongze Wang, Hui Zhang, Ziyi You, Linlong Jiang, Yu Kang, Jike Wang, Chang‑Yu Hsieh, Tingjun Hou<br />
-          Nat. Commun. 17, 3639 (2026).</p>
+          <h3>
+            <a href="https://www.nature.com/articles/s41467-026-70377-4" target="_blank" rel="noopener">
+              A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention
+            </a>
+          </h3>
+
+          <p class="pub-meta">
+            Qun Su†, <strong>Kai Zhu†</strong>, Qiaolin Gou†, Jintu Zhang, Renling Hu, Yurong Li, Yongze Wang, Hui Zhang, Ziyi You, Linlong Jiang, Yu Kang, Jike Wang, Chang-Yu Hsieh, Tingjun Hou<br />
+            <em>Nat. Commun.</em> 17, 3639 (2026).
+          </p>
+
           <p class="pub-links">
-            <a href="https://www.nature.com/articles/s41467-026-70377-4" target="_blank" rel="noopener">PDF</a>
             <a class="btn-link" onclick="toggleAbstract('LiTEN_abs')">Abstract</a>
             <a href="https://arxiv.org/abs/2507.00884" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/lingcon01/LiTEN" target="_blank" rel="noopener">Code</a>
           </p>
+
+          <a class="scholar-badge"
+             href="https://scholar.google.com/scholar?q=A+Scalable+and+Quantum-Accurate+Foundation+Model+for+Biomolecular+Force+Field+via+Linearly+Tensorized+Quadrangle+Attention"
+             target="_blank"
+             rel="noopener"
+             data-title="A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention"
+             aria-label="Google Scholar citations for LiTEN">
+            <span class="scholar-left">
+              <span class="scholar-icon"></span>
+              scholar
+            </span>
+            <span class="scholar-count">0</span>
+          </a>
+
           <div id="LiTEN_abs" class="abstract">
             Accurate atomistic biomolecular simulations are vital for disease mechanism understanding, drug discovery, and biomaterial design, but existing simulation methods exhibit significant limitations. Classical force fields are efficient but lack accuracy for transition states and fine conformational details critical in many chemical and biological processes. Quantum Mechanics (QM) methods are highly accurate but computationally infeasible for large-scale or long-time simulations. AI-based force fields (AIFFs) aim to achieve QM-level accuracy with efficiency but struggle to balance many-body modeling complexity, accuracy, and speed, often constrained by limited training data and insufficient validation for generalizability. To overcome these challenges, we introduce LiTEN, a novel equivariant neural network with Tensorized Quadrangle Attention (TQA). TQA efficiently models three- and four-body interactions with linear complexity by reparameterizing high-order tensor features via vector operations, avoiding costly spherical harmonics. Building on LiTEN, LiTEN-FF is a robust AIFF foundation model, pre-trained on the extensive nablaDFT dataset for broad chemical generalization and fine-tuned on SPICE for accurate solvated system simulations. LiTEN achieves state-of-the-art (SOTA) performance across most evaluation subsets of rMD17, MD22, and Chignolin, outperforming leading models such as MACE, NequIP, and EquiFormer. LiTEN-FF enables the most comprehensive suite of downstream biomolecular modeling tasks to date, including QM-level conformer searches, geometry optimization, and free energy surface construction, while offering 10x faster inference than MACE-OFF for large biomolecules (~1000 atoms). In summary, we present a physically grounded, highly efficient framework that advances complex biomolecular modeling, providing a versatile foundation for drug discovery and related applications.
           </div>
         </div>
       </article>
 
-      <!-- Machine Learning Drug Design -->
-      <h3 style="margin-top:20px;">Machine Learning Drug Design</h3>
+      <h3 class="subsection-title">Others</h3>
 
-      <article class="publication-flex">
-        <div class="left">
-          <img src="images/publication/MetalloDock.jpg" alt="MetalloDock" class="pub-thumb" />
-        </div>
-        <div class="publication-details">
-          <h3>MetalloDock: Decoding Metalloprotein-Ligand Interactions via Physics-Aware Deep Learning for Metalloprotein Drug Discovery</h3>
-          <p class="pub-meta">Hui Zhang, Xujun Zhang, Qun Su, Yangyang Zheng, Linlong Jiang, <strong>Kai Zhu</strong>, et al. <br />
-          J. Am. Chem. Soc. 2026, 148, 3, 3086–3101</p>
-          <p class="pub-links">
-            <a href="https://pubs.acs.org/doi/full/10.1021/jacs.5c15876" target="_blank" rel="noopener">PDF</a>
-            <a class="btn-link" onclick="toggleAbstract('Metallodock_abs')">Abstract</a>
+      <div class="others-list">
+        <div class="publication-other">
+          <h3>
+            <a href="https://pubs.acs.org/doi/full/10.1021/jacs.5c15876" target="_blank" rel="noopener">
+              MetalloDock: Decoding Metalloprotein-Ligand Interactions via Physics-Aware Deep Learning for Metalloprotein Drug Discovery
+            </a>
+          </h3>
+          <p class="pub-meta">
+            Hui Zhang, Xujun Zhang, Qun Su, Yangyang Zheng, Linlong Jiang, <strong>Kai Zhu</strong>, et al.<br />
+            <em>J. Am. Chem. Soc.</em> 2026, 148, 3, 3086–3101.
           </p>
-          <div id="Metallodock_abs" class="abstract">
-            Accurate prediction of metalloprotein–ligand interactions is critical for metalloprotein-targeted drug discovery. Conventional docking tools and existing deep learning (DL) models fail to reliably capture metal–ligand interactions, hampering the discovery of potent metalloprotein inhibitors. Here, we propose MetalloDock, the first DL-based docking framework specially designed for metalloprotein targets. By innovatively integrating an autoregressive spatial decoding engine with a physics-constrained geometric generation paradigm, MetalloDock can precisely reconstruct metal coordination geometries and accurately capture metal–ligand interactions, which enhance both the accuracy of metalloprotein–ligand docking and binding affinity prediction. Extensive evaluations on our custom-built benchmark data set demonstrate that MetalloDock outperforms existing methods, including AlphaFold3, in docking success rate and virtual screening performance for metalloprotein targets. In real-world applications, MetalloDock successfully identified multiple novel hit compounds in a virtual screening campaign targeting the prostate-specific membrane antigen. Additionally, it enabled rational drug design for acidic polymerase endonuclease, leading to the discovery of potent inhibitors. These results highlight the broad applicability of MetalloDock in accelerating metalloprotein-targeted drug discovery and provide a standardized framework for future evaluation of metalloprotein-specific docking algorithms.
-          </div>
         </div>
-      </article>
 
-      <article class="publication-flex">
-        <div class="left">
-          <img src="images/publication/pro-pro_docking_framework.jpg" alt="Benchmarking framework for protein–protein docking" class="pub-thumb" />
-        </div>
-        <div class="publication-details">
-          <h3>Revisiting Protein–Protein Docking: A Systematic Evaluation Framework</h3>
-          <p class="pub-meta">Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Ying Wang, Yu Kang, Tingjun Hou<br />
-          J. Chem. Inf. Model. 2025, 65, 19, 10573–10587</p>
-          <p class="pub-links">
-            <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c01399" target="_blank" rel="noopener">PDF</a>
-            <a class="btn-link" onclick="toggleAbstract('protein_evo_abs')">Abstract</a>
+        <div class="publication-other">
+          <h3>
+            <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c01399" target="_blank" rel="noopener">
+              Revisiting Protein–Protein Docking: A Systematic Evaluation Framework
+            </a>
+          </h3>
+          <p class="pub-meta">
+            Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Ying Wang, Yu Kang, Tingjun Hou<br />
+            <em>J. Chem. Inf. Model.</em> 2025, 65, 19, 10573–10587.
           </p>
-          <div id="protein_evo_abs" class="abstract">
-            Protein–protein interactions play pivotal roles in a wide range of biological processes. Determining the atomic-level structures of protein–protein complexes is indispensable for elucidating macromolecular interaction mechanisms and advancing structure-based drug design. Protein–protein docking, as one of the leading computational approaches for predicting complex structures, has seen considerable progress but requires rigorous evaluation in practical applications. In this study, we proposed a comprehensive benchmarking framework to evaluate 11 docking methods spanning traditional (HDOCK, PatchDock, PIPER, ZDOCK) and deep learning (DL)-based (EquiDock, ElliDock, EBMDock, GeoDock, DiffDock-PP, AlphaFold-Multimer, AlphaFold3) approaches. Our framework incorporates the classical DockingBenchmark 5.5 data set for evaluating flexible docking, introduces a newly curated data set (AACBench) for antibody–antigen complex docking, and establishes the PPCBench data set to examine the out-of-distribution (OOD) generalization capabilities of DL-based methods. In docking against apo structures, AlphaFold3 achieves a superior top-5 success rate of 77.98%, whereas the traditional approach HDOCK reaches merely 12.84%, despite its highest top-5 success rate of 85.24% when docking against holo structures. For antibody–antigen docking, AlphaFold3 remains the most accurate method (top-5 success rate: 31.78%) and substantially outperforms AlphaFold-Multimer in modeling the CDR-H3 loop. In OOD generalization tests, all DL-based models exhibit markedly reduced performance on the PPCBench data set. Overall, our work establishes a unified benchmarking framework that enables systematic evaluation of docking methods across diverse tasks and provides critical insights into the strengths and limitations of current docking strategies, thereby informing future developments in protein–protein docking research.
-          </div>
         </div>
-      </article>
 
-      <article class="publication-flex">
-        <div class="left">
-          <img src="images/publication/pro-pro_docking.jpg" alt="Protein–protein docking illustration" class="pub-thumb" />
-        </div>
-        <div class="publication-details">
-          <h3>From Traditional Methods to Deep Learning Approaches: Advances in Protein–Protein Docking</h3>
-          <p class="pub-meta">Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Hui Zhang, Chao Shen, Tingjun Hou<br />
-          Wiley Interdisciplinary Reviews: Computational Molecular Science, 2025, 15(2), e70016</p>
-          <p class="pub-links">
-            <a href="https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wcms.70016" target="_blank" rel="noopener">PDF</a>
-            <a class="btn-link" onclick="toggleAbstract('protein_docking_abs')">Abstract</a>
+        <div class="publication-other">
+          <h3>
+            <a href="https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wcms.70016" target="_blank" rel="noopener">
+              From Traditional Methods to Deep Learning Approaches: Advances in Protein–Protein Docking
+            </a>
+          </h3>
+          <p class="pub-meta">
+            Linlong Jiang, Ke Zhang, <strong>Kai Zhu</strong>, Hui Zhang, Chao Shen, Tingjun Hou<br />
+            <em>Wiley Interdisciplinary Reviews: Computational Molecular Science</em>, 2025, 15(2), e70016.
           </p>
-          <div id="protein_docking_abs" class="abstract">
-            Protein–protein interactions play a crucial role in human biological processes, and deciphering their structural information and interaction patterns is essential for drug development. The high costs of experimental structure determination have brought computational protein–protein docking methods into the spotlight. Traditional docking algorithms, which hinge on a sampling‑scoring framework, heavily rely on extensive sampling of candidate poses and customized scoring functions based on the geometric and chemical compatibility between proteins. However, these methods face challenges related to sampling efficiency and stability. The advent of deep learning (DL) has ushered in data‑driven docking methods that demonstrate significant advantages, particularly boosting the efficiency of protein–protein docking. We systematically review the historical development of protein–protein docking from traditional approaches to DL techniques and provide insights into emerging technologies in this field. Moreover, we summarize the commonly used datasets and evaluation metrics in protein–protein docking. We expect that this review can offer valuable guidance for the development of more efficient protein–protein docking algorithms.
-          </div>
         </div>
-      </article>
-
+      </div>
     </section>
 
     <hr />
 
     <footer>
-      Website template from <a href="http://www.cs.berkeley.edu/~barron/">here</a> and <a href="http://www.cs.cmu.edu/~dpathak/">here</a>
+      Website template from
+      <a href="http://www.cs.berkeley.edu/~barron/" target="_blank" rel="noopener">here</a>
+      and
+      <a href="http://www.cs.cmu.edu/~dpathak/" target="_blank" rel="noopener">here</a>.
     </footer>
   </div>
 
   <script>
     function toggleAbstract(id) {
-      var el = document.getElementById(id);
+      const el = document.getElementById(id);
       if (!el) return;
       el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
     }
-    // current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
