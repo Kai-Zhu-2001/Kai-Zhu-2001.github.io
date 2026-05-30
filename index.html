@@ -241,12 +241,14 @@
     .pub-thumb {
       width: 100%;
       max-width: 250px;
-      aspect-ratio: 1.35 / 1;
-      object-fit: cover;
+      height: 185px;
+      object-fit: contain;
+      object-position: center;
       border-radius: 14px;
       display: block;
       border: 1px solid #edf0f5;
       background: #f3f5f8;
+      padding: 6px;
     }
 
     .publication-details h3 {
@@ -463,8 +465,10 @@
       }
 
       .pub-thumb {
-        max-width: 100%;
-        aspect-ratio: 1.7 / 1;
+        max-width: 250px;
+        height: 185px;
+        margin: 0 auto;
+        object-fit: contain;
       }
 
       h1 {
@@ -483,24 +487,24 @@
     <section class="top-card" aria-label="Profile section">
       <h1>Kai Zhu 「祝凯」</h1>
 
-  <div class="profile-grid">
-    <div class="profile-side">
-      <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
+      <div class="profile-grid">
+        <div class="profile-side">
+          <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
 
-      <nav class="contact-links" aria-label="Contact links">
-        |
-        <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
-        |
-        <a href="mailto:22319143@zju.edu.cn">Email</a>
-        |
-        <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
-        |
-        <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
-        |
-        <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
-        |
-      </nav>
-    </div>
+          <nav class="contact-links" aria-label="Contact links">
+            |
+            <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
+            |
+            <a href="mailto:kaizhu2001@zju.edu.cn">Email</a>
+            |
+            <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
+            |
+            <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
+            |
+            <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
+            |
+          </nav>
+        </div>
 
         <div class="bio-text">
           <p>
@@ -713,13 +717,9 @@
 
     <hr />
 
-    <footer>
-      Website template from
-      <a href="http://www.cs.berkeley.edu/~barron/" target="_blank" rel="noopener">here</a>
-      and
-      <a href="http://www.cs.cmu.edu/~dpathak/" target="_blank" rel="noopener">here</a>.
-    </footer>
-  </div>
+<footer>
+  <p>© 2026 Kai Zhu. Built and maintained by Kai Zhu.</p>
+</footer>
 
   <script>
     function toggleAbstract(id) {
