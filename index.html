@@ -650,9 +650,52 @@
 
       <p class="pub-legend">
         <span title="Equal contribution">†</span> Equal contribution
+        <span title="Corresponding author">*</span> Corresponding author
       </p>
 
       <h3 class="subsection-title">Featured work</h3>
+
+      <article class="publication-flex">
+        <div class="pub-thumb-wrap">
+          <img src="images/publication/SelfTICA.png" alt="SelfTICA framework" class="pub-thumb" />
+        </div>
+
+        <div class="publication-details">
+          <h3>
+            <a href="https://arxiv.org/pdf/2606.15495" target="_blank" rel="noopener">
+              Contrastive learning of dynamical representations for enhanced molecular sampling
+            </a>
+          </h3>
+
+          <p class="pub-meta">
+            <strong>Kai Zhu†</strong>, Jintu Zhang†, Pietro Novelli, Tingjun Hou*, Luigi Bonati*<br />
+            <em>arXiv</em> arXiv:2606.15495 (2026)
+          </p>
+
+          <p class="pub-links">
+            <a class="btn-link" onclick="toggleAbstract('SelfTICA_abs')">Abstract</a>
+            <a href="https://arxiv.org/pdf/2606.15495" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/Kai-Zhu-2001/SelfTICA" target="_blank" rel="noopener">Code</a>
+          </p>
+
+          <a class="scholar-badge"
+            href="https://scholar.google.com/scholar?q=Contrastive+learning+of+dynamical+representations+for+enhanced+molecular+sampling"
+            target="_blank"
+            rel="noopener"
+            data-title="Contrastive learning of dynamical representations for enhanced molecular sampling"
+            aria-label="Google Scholar citations for Contrastive learning of dynamical representations for enhanced molecular sampling">
+            <span class="scholar-left">
+              <span class="scholar-icon"></span>
+              scholar
+            </span>
+            <span class="scholar-count">0</span>
+          </a>
+
+          <div id="SelfTICA_abs" class="abstract">
+    Identifying collective variables that capture slow dynamical modes is essential for sampling rare events in complex systems. Existing machine-learning approaches often require predefined metastable states, carefully chosen descriptors, or training trajectories with high-quality kinetic information. Here, we introduce SelfTICA, a self-supervised contrastive-learning framework that reformulates collective-variable discovery as dynamical representation learning. SelfTICA defines positive and negative pairs from time-lagged molecular configurations, learns reusable features through a contrastive objective linked to spectral variational principles, and extracts orthogonal slow modes by applying time-lagged independent component analysis in the learned representation space. By decoupling representation learning from slow-mode extraction, SelfTICA avoids direct optimization of eigendecomposition-based objectives and enables spectra and collective variables to be evaluated across lag times without retraining. Across different atomistic systems, SelfTICA learns dynamical representations from limited, biased, or exploratory data and converts them into collective variables that accelerate rare-event exploration and improve free-energy convergence.
+          </div>
+        </div>
+      </article>
 
       <article class="publication-flex">
         <div class="pub-thumb-wrap">
@@ -667,7 +710,7 @@
           </h3>
 
           <p class="pub-meta">
-            <strong>Kai Zhu†</strong>, Huating Wang†, Jintu Zhang†, Renling Hu, Linlong Jiang, Hui Zhang, Yu Kang, Tingjun Hou, Dan Li<br />
+            <strong>Kai Zhu†</strong>, Huating Wang†, Jintu Zhang†, Renling Hu, Linlong Jiang, Hui Zhang, Yu Kang, Tingjun Hou*, Dan Li*<br />
             <em>Nat. Commun.</em> (2026)
           </p>
 
@@ -708,7 +751,7 @@
           </h3>
 
           <p class="pub-meta">
-            <strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou, Luigi Bonati<br />
+            <strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou*, Luigi Bonati*<br />
             <em>Chem. Rev.</em> 2026, 126, 1, 671-713
           </p>
 
@@ -732,59 +775,6 @@
 
           <div id="MLES_abs" class="abstract">
             Molecular dynamics simulations hold great promise for providing insight into the microscopic behavior of complex molecular systems. However, their effectiveness is often constrained by long timescales associated with rare events. Enhanced sampling methods have been developed to address these challenges, and recent years have seen a growing integration with machine learning techniques. This Review provides a comprehensive overview of how they are reshaping the field, with a particular focus on the data-driven construction of collective variables. Furthermore, these techniques have also improved biasing schemes and unlocked novel strategies via reinforcement learning and generative approaches. In addition to methodological advances, we highlight applications spanning different areas, such as biomolecular processes, ligand binding, catalytic reactions, and phase transitions. We conclude by outlining future directions aimed at enabling more automated strategies for rareevent sampling.
-          </div>
-        </div>
-      </article>
-
-      <article class="publication-flex">
-        <div class="pub-thumb-wrap">
-          <img src="images/publication/self-supervised.jpg" alt="Illustration of self-supervised evolution operator learning" class="pub-thumb" />
-        </div>
-
-        <div class="publication-details">
-          <h3>
-            <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">
-              Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
-            </a>
-          </h3>
-
-          <p class="pub-meta">
-            Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
-            <em>International Conference on Learning Representations</em> (2026)
-          </p>
-
-          <p class="pub-links">
-            <a class="btn-link" onclick="toggleAbstract('evolution_operator_abs')">Abstract</a>
-            <a href="https://arxiv.org/abs/2505.18671" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/pietronvll/encoderops" target="_blank" rel="noopener">Code</a>
-          </p>
-
-          <a class="scholar-badge"
-             href="https://scholar.google.com/scholar?q=Self-Supervised+Evolution+Operator+Learning+for+High-Dimensional+Dynamical+Systems"
-             target="_blank"
-             rel="noopener"
-             data-title="Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems"
-             aria-label="Google Scholar citations for Self-Supervised Evolution Operator Learning">
-            <span class="scholar-left">
-              <span class="scholar-icon"></span>
-              scholar
-            </span>
-            <span class="scholar-count">4</span>
-          </a>
-
-          <div id="evolution_operator_abs" class="abstract">
-We introduce an end-to-end approach to learn the evolution operators of largescale non-linear dynamical systems, such as those describing complex natural
-phenomena. Evolution operators are particularly well-suited for analyzing systems
-that exhibit spatio-temporal patterns and have become a key analytical tool across
-various scientific communities. As terabyte-scale weather datasets and simulation
-tools capable of running millions of molecular dynamics steps per day are becoming
-commodities, our approach provides an effective tool to make sense of them from a
-data-driven perspective. The core of it lies in a remarkable connection between selfsupervised representation learning methods and the recently established learning
-theory of evolution operators. We deploy our approach across multiple scientific
-domains: explaining the folding dynamics of small proteins, the binding process of
-drug-like molecules in host sites, and autonomously finding patterns in climate data.
-Our code is available open-source at: https://github.com/pietronvll/
-encoderops.
           </div>
         </div>
       </article>
@@ -834,6 +824,17 @@ encoderops.
       <h3 class="subsection-title">Others</h3>
 
       <div class="others-list">
+      <div class="publication-other">
+        <h3>
+          <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">
+            Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
+          </a>
+        </h3>
+        <p class="pub-meta">
+          Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
+          <em>International Conference on Learning Representations</em> (2026)
+        </p>
+      </div>
         <div class="publication-other">
           <h3>
             <a href="https://pubs.acs.org/doi/full/10.1021/jacs.5c15876" target="_blank" rel="noopener">
