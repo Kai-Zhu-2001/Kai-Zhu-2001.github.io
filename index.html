@@ -335,6 +335,42 @@
         0 5px 14px rgba(15, 23, 42, 0.035);
     }
 
+    /* Journal abbreviation label on publication thumbnail */
+    .journal-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 3;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0.28rem 0.68rem;
+      border-radius: 8px 8px 8px 0;
+
+      background: #0b2b78;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+    }
+
+    .journal-label::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 8px solid #0b2b78;
+      border-top: 8px solid transparent;
+    }
+
     .publication-details h3 {
       margin: 0 0 0.55rem 0;
       font-size: 1.28rem;
@@ -586,6 +622,12 @@
         object-fit: contain;
       }
 
+      .journal-label {
+        top: 8px;
+        left: calc(50% - 130px + 8px);
+        font-size: 0.86rem;
+      }
+
       .publication-details h3 {
         font-size: 1.18rem;
       }
@@ -657,6 +699,7 @@
 
       <article class="publication-flex">
         <div class="pub-thumb-wrap">
+          <span class="journal-label">arXiv</span>
           <img src="images/publication/SelfTICA.png" alt="SelfTICA framework" class="pub-thumb" />
         </div>
 
@@ -692,13 +735,14 @@
           </a>
 
           <div id="SelfTICA_abs" class="abstract">
-    Identifying collective variables that capture slow dynamical modes is essential for sampling rare events in complex systems. Existing machine-learning approaches often require predefined metastable states, carefully chosen descriptors, or training trajectories with high-quality kinetic information. Here, we introduce SelfTICA, a self-supervised contrastive-learning framework that reformulates collective-variable discovery as dynamical representation learning. SelfTICA defines positive and negative pairs from time-lagged molecular configurations, learns reusable features through a contrastive objective linked to spectral variational principles, and extracts orthogonal slow modes by applying time-lagged independent component analysis in the learned representation space. By decoupling representation learning from slow-mode extraction, SelfTICA avoids direct optimization of eigendecomposition-based objectives and enables spectra and collective variables to be evaluated across lag times without retraining. Across different atomistic systems, SelfTICA learns dynamical representations from limited, biased, or exploratory data and converts them into collective variables that accelerate rare-event exploration and improve free-energy convergence.
+            Identifying collective variables that capture slow dynamical modes is essential for sampling rare events in complex systems. Existing machine-learning approaches often require predefined metastable states, carefully chosen descriptors, or training trajectories with high-quality kinetic information. Here, we introduce SelfTICA, a self-supervised contrastive-learning framework that reformulates collective-variable discovery as dynamical representation learning. SelfTICA defines positive and negative pairs from time-lagged molecular configurations, learns reusable features through a contrastive objective linked to spectral variational principles, and extracts orthogonal slow modes by applying time-lagged independent component analysis in the learned representation space. By decoupling representation learning from slow-mode extraction, SelfTICA avoids direct optimization of eigendecomposition-based objectives and enables spectra and collective variables to be evaluated across lag times without retraining. Across different atomistic systems, SelfTICA learns dynamical representations from limited, biased, or exploratory data and converts them into collective variables that accelerate rare-event exploration and improve free-energy convergence.
           </div>
         </div>
       </article>
 
       <article class="publication-flex">
         <div class="pub-thumb-wrap">
+          <span class="journal-label">Nat. Commun.</span>
           <img src="images/publication/AR-NTD.jpg" alt="Illustration of AR-NTD enhanced sampling workflow" class="pub-thumb" />
         </div>
 
@@ -740,6 +784,7 @@
 
       <article class="publication-flex">
         <div class="pub-thumb-wrap">
+          <span class="journal-label">Chem. Rev.</span>
           <img src="images/publication/MLES.png" alt="Cover image for MLES review" class="pub-thumb" />
         </div>
 
@@ -781,6 +826,7 @@
 
       <article class="publication-flex">
         <div class="pub-thumb-wrap">
+          <span class="journal-label">Nat. Commun.</span>
           <img src="images/publication/LiTen.jpg" alt="Illustration for LiTEN work" class="pub-thumb" />
         </div>
 
@@ -824,17 +870,18 @@
       <h3 class="subsection-title">Others</h3>
 
       <div class="others-list">
-      <div class="publication-other">
-        <h3>
-          <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">
-            Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
-          </a>
-        </h3>
-        <p class="pub-meta">
-          Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
-          <em>International Conference on Learning Representations</em> (2026)
-        </p>
-      </div>
+        <div class="publication-other">
+          <h3>
+            <a href="https://openreview.net/pdf?id=Ku3kLJle7Q" target="_blank" rel="noopener">
+              Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
+            </a>
+          </h3>
+          <p class="pub-meta">
+            Giacomo Turri, Luigi Bonati, <strong>Kai Zhu</strong>, Massimiliano Pontil, Pietro Novelli<br />
+            <em>International Conference on Learning Representations</em> (2026)
+          </p>
+        </div>
+
         <div class="publication-other">
           <h3>
             <a href="https://pubs.acs.org/doi/full/10.1021/jacs.5c15876" target="_blank" rel="noopener">
