@@ -1,38 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kai Zhu's Homepage - Ph.D. student in Pharmaceutical Science, Zhejiang University." />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Kai Zhu's Homepage - Ph.D. student in Pharmaceutical Science at Zhejiang University."
+  />
+
   <title>Kai Zhu</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/scorpion.png?v=1" />
-  <link rel="icon" type="image/png" sizes="192x192" href="images/scorpion.png?v=1" />
-  <link rel="apple-touch-icon" href="images/scorpion.png?v=1" />
+  <!-- =======================================================
+       Favicon
+       ======================================================= -->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="images/scorpion.png?v=1"
+  />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="images/scorpion.png?v=1"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="images/scorpion.png?v=1"
+  />
+
+  <!-- =======================================================
+       Google Font
+       ======================================================= -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+
+    /* =======================================================
+       Design tokens
+       ======================================================= */
+
     :root {
-      --bg: #f7f8fb;
-      --card-bg: rgba(255, 255, 255, 0.92);
-      --text: #25313b;
-      --muted: #5f6b78;
-      --light-muted: #8893a0;
-      --blue: #1772d0;
-      --blue-dark: #0f4f94;
-      --blue-light: #edf6ff;
-      --orange: #f09228;
-      --orange-light: #fff3e6;
-      --border: #e5eaf1;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.065);
-      --shadow-hover: 0 18px 42px rgba(15, 23, 42, 0.13);
-      --radius: 22px;
+
+      --bg: #fafbfc;
+      --surface: #ffffff;
+
+      --text: #172230;
+      --text-soft: #344054;
+      --muted: #667085;
+      --light-muted: #98a2b3;
+
+      --blue: #175cd3;
+      --blue-dark: #1849a9;
+      --blue-soft: #f5f8ff;
+
+      --border: #e4e9f0;
+      --border-soft: #edf0f4;
+
+      --shadow-sm:
+        0 1px 2px rgba(16, 24, 40, 0.025),
+        0 3px 8px rgba(16, 24, 40, 0.03);
+
+      --shadow-md:
+        0 5px 16px rgba(16, 24, 40, 0.045),
+        0 14px 32px rgba(16, 24, 40, 0.035);
+
+      --radius: 14px;
+      --radius-lg: 18px;
+
+      --max-width: 1120px;
     }
 
-    *, *::before, *::after {
+
+    /* =======================================================
+       Reset
+       ======================================================= */
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
@@ -40,845 +109,2006 @@
       scroll-behavior: smooth;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+      margin: 0;
+
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       font-size: 16px;
-      line-height: 1.68;
+      line-height: 1.7;
+
       color: var(--text);
+
       background:
-        radial-gradient(circle at 6% 0%, rgba(23, 114, 208, 0.15), transparent 28%),
-        radial-gradient(circle at 96% 12%, rgba(240, 146, 40, 0.12), transparent 24%),
-        linear-gradient(180deg, #fbfcff 0%, #f5f7fb 48%, #f7f8fb 100%);
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          var(--bg) 250px,
+          var(--bg) 100%
+        );
+
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     a {
       color: var(--blue);
       text-decoration: none;
+
       transition:
-        color 0.18s ease,
-        background 0.18s ease,
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        border-color 0.18s ease;
+        color 0.16s ease,
+        border-color 0.16s ease,
+        background 0.16s ease,
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
     }
 
     a:hover {
-      color: var(--orange);
+      color: var(--blue-dark);
     }
 
-    h1, h2, h3 {
+    button {
+      font: inherit;
+    }
+
+
+    /* =======================================================
+       Top navigation
+       ======================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+
+      border-bottom:
+        1px solid rgba(228, 233, 240, 0.88);
+
+      background:
+        rgba(255, 255, 255, 0.88);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+
+      margin: 0 auto;
+
+      padding:
+        0.8rem
+        1.35rem;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
       font-weight: 700;
-      line-height: 1.25;
+
       color: var(--text);
+
+      letter-spacing: -0.015em;
     }
 
-    h1 {
-      font-size: 2.85rem;
-      text-align: left;
-      margin: 0 0 1.1rem 0;
-      letter-spacing: 0.012em;
+    .nav-brand:hover {
+      color: var(--blue);
     }
 
-    h2 {
-      font-size: 2.05rem;
-      margin: 0;
-      letter-spacing: 0.01em;
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 1.4rem;
+
+      font-size: 0.92rem;
+      font-weight: 500;
     }
 
-    h3 {
-      font-size: 1.25rem;
-      margin: 0 0 0.35rem 0;
+    .nav-links a {
+      color: var(--muted);
     }
 
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(
-        to right,
-        rgba(23, 114, 208, 0),
-        rgba(23, 114, 208, 0.25),
-        rgba(240, 146, 40, 0.18),
-        rgba(23, 114, 208, 0)
-      );
-      margin: 2.6rem 0;
+    .nav-links a:hover {
+      color: var(--blue);
     }
+
+    .nav-cv {
+      padding:
+        0.38rem
+        0.72rem;
+
+      border:
+        1px solid
+        #d7e0ec;
+
+      border-radius: 7px;
+
+      color: var(--blue) !important;
+
+      background: #ffffff;
+    }
+
+    .nav-cv:hover {
+      border-color: #b8cae4;
+
+      background:
+        var(--blue-soft);
+    }
+
+
+    /* =======================================================
+       Main container
+       ======================================================= */
 
     .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 2.1rem 1.25rem 1.1rem;
+      width:
+        min(
+          var(--max-width),
+          calc(100% - 2.5rem)
+        );
+
+      margin:
+        0
+        auto;
+
+      padding:
+        2.6rem
+        0
+        1.5rem;
     }
 
-    .top-card {
-      position: relative;
-      padding: 2rem;
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: 30px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.82)),
-        radial-gradient(circle at 10% 0%, rgba(23, 114, 208, 0.08), transparent 34%);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow: hidden;
-    }
 
-    .top-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(23,114,208,0.12), rgba(240,146,40,0.08));
-      opacity: 0.18;
-    }
+    /* =======================================================
+       Hero / Profile
+       ======================================================= */
 
-    .top-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .profile-grid {
+    .hero {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2.6rem;
+
+      grid-template-columns:
+        225px
+        minmax(0, 1fr);
+
+      gap: 3.2rem;
+
       align-items: start;
+
+      padding:
+        2.2rem
+        2.4rem;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-lg);
+
+      box-shadow:
+        var(--shadow-sm);
     }
 
     .profile-side {
+      display: flex;
+
+      flex-direction: column;
+      align-items: center;
+
       text-align: center;
-      padding-top: 0.35rem;
     }
 
     .profile-img {
-      width: 205px;
-      height: 205px;
-      object-fit: contain;
+      width: 185px;
+      height: 185px;
+
+      object-fit: cover;
       object-position: center;
-      border-radius: 50%;
+
       display: block;
-      margin: 0 auto 1.15rem auto;
-      padding: 8px;
+
+      border-radius: 50%;
+
+      padding: 4px;
+
       background: #ffffff;
-      border: 4px solid rgba(255, 255, 255, 0.98);
+
+      border:
+        1px solid
+        var(--border);
+
       box-shadow:
-        0 16px 34px rgba(15, 23, 42, 0.16),
-        0 0 0 1px rgba(23, 114, 208, 0.08);
+        0 8px 24px rgba(16, 24, 40, 0.08);
     }
 
     .contact-links {
+      margin-top: 1.2rem;
+
       display: flex;
       flex-wrap: wrap;
+
       justify-content: center;
-      gap: 0.46rem;
-      margin-top: 0.95rem;
-      font-size: 0.91rem;
+
+      gap: 0.45rem;
     }
 
     .contact-links a {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      padding: 0.24rem 0.66rem;
-      border-radius: 999px;
-      background: rgba(237, 246, 255, 0.96);
-      color: var(--blue);
-      font-weight: 700;
-      border: 1px solid rgba(23, 114, 208, 0.11);
-      box-shadow: 0 4px 12px rgba(23, 114, 208, 0.04);
+
+      min-height: 32px;
+
+      padding:
+        0.27rem
+        0.67rem;
+
+      font-size: 0.84rem;
+      font-weight: 600;
+
+      color: #344054;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        #dde3ea;
+
+      border-radius: 7px;
     }
 
     .contact-links a:hover {
-      background: var(--orange-light);
-      color: var(--orange);
-      border-color: rgba(240, 146, 40, 0.22);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(240, 146, 40, 0.08);
+      color: var(--blue-dark);
+
+      border-color: #b8cae4;
+
+      background:
+        var(--blue-soft);
+
+      transform:
+        translateY(-1px);
     }
 
-    .bio-text p {
-      margin: 0 0 0.95rem 0;
-      line-height: 1.78;
+    .hero-content {
+      min-width: 0;
+    }
+
+    .hero h1 {
+      margin:
+        0
+        0
+        1.1rem;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.8rem
+        );
+
+      line-height: 1.12;
+
+      font-weight: 700;
+
+      letter-spacing:
+        -0.04em;
+
       color: var(--text);
-      font-size: 1.02rem;
     }
 
-    .bio-text p:last-of-type {
-      margin-bottom: 1.15rem;
+    .hero p {
+      margin:
+        0
+        0
+        0.9rem;
+
+      color:
+        var(--text-soft);
+
+      font-size: 1rem;
+
+      line-height: 1.75;
     }
+
+    .hero p:last-of-type {
+      margin-bottom: 1.4rem;
+    }
+
+    .hero strong {
+      font-weight: 650;
+    }
+
+
+    /* =======================================================
+       Research interests
+       ======================================================= */
 
     .interest-title {
-      margin-top: 1.3rem;
-      color: var(--text);
-      font-size: 1.14rem;
+      margin:
+        1.55rem
+        0
+        0.7rem;
+
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+
+      color: var(--muted);
     }
 
     .research-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.65rem;
+
+      gap: 0.48rem;
     }
 
     .research-tags span {
       display: inline-flex;
+
       align-items: center;
-      padding: 0.3rem 0.72rem;
-      border-radius: 999px;
-      background: #f3f8ff;
-      color: #315f91;
-      font-size: 0.92rem;
-      font-weight: 700;
-      border: 1px solid rgba(23, 114, 208, 0.11);
+
+      padding:
+        0.32rem
+        0.72rem;
+
+      border-radius:
+        999px;
+
+      border:
+        1px solid
+        #e1e6ed;
+
+      background:
+        #f8fafc;
+
+      color:
+        #475467;
+
+      font-size: 0.86rem;
+      font-weight: 600;
     }
 
-    .section-head {
+
+    /* =======================================================
+       Sections
+       ======================================================= */
+
+    .section {
+      margin-top: 4.2rem;
+    }
+
+    .section-header {
       display: flex;
-      align-items: center;
+
+      align-items: end;
       justify-content: space-between;
+
       gap: 1rem;
-      margin-bottom: 0.35rem;
+
+      margin-bottom: 1.5rem;
     }
 
-    .section-head h2 {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
+    .section-title-wrap {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0.4rem;
     }
 
-    .section-head h2::after {
-      content: "";
-      width: 74px;
-      height: 3px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--blue), rgba(240,146,40,0.75));
-      transform: translateY(2px);
+    .section-kicker {
+      margin: 0;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      color: var(--blue);
     }
 
-    .pub-legend {
-      margin: 0 0 1.35rem 0;
-      color: var(--light-muted);
-      font-size: 0.96rem;
-    }
+    .section-title {
+      margin: 0;
 
-    .subsection-title {
-      position: relative;
-      margin: 1.55rem 0 1.05rem 0;
-      padding-bottom: 0.6rem;
+      font-size:
+        clamp(
+          1.7rem,
+          3vw,
+          2rem
+        );
+
+      line-height: 1.25;
+
+      letter-spacing:
+        -0.025em;
+
       color: var(--text);
-      font-size: 1.28rem;
-      letter-spacing: 0.01em;
-      border-bottom: 1px solid var(--border);
     }
 
-    .subsection-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: 78px;
+    .section-description {
+      margin:
+        0.35rem
+        0
+        0;
+
+      max-width: 680px;
+
+      color: var(--muted);
+
+      font-size: 0.95rem;
+    }
+
+    .section-line {
+      width: 42px;
       height: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
+
+      margin-top: 0.75rem;
+
       border-radius: 999px;
+
+      background: var(--blue);
     }
 
-    .publication-flex {
+
+    /* =======================================================
+       Publications
+       ======================================================= */
+
+    .publication-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 1.1rem;
+    }
+
+    .publication-card {
       display: grid;
-      grid-template-columns: minmax(190px, 250px) 1fr;
-      gap: 1.45rem;
+
+      grid-template-columns:
+        235px
+        minmax(0, 1fr);
+
+      gap: 1.55rem;
+
       align-items: start;
-      margin-bottom: 1.35rem;
-      padding: 1.22rem;
-      border: 1px solid rgba(226, 232, 240, 0.95);
-      border-radius: var(--radius);
-      background: var(--card-bg);
-      box-shadow: 0 7px 24px rgba(15, 23, 42, 0.048);
+
+      padding: 1.2rem;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        var(--shadow-sm);
+
       transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        border-color 0.18s ease,
-        background 0.18s ease;
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        border-color 0.16s ease;
     }
 
-    .publication-flex:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(23, 114, 208, 0.28);
-      background: rgba(255, 255, 255, 0.98);
+    .publication-card:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        #cbd6e3;
+
+      box-shadow:
+        var(--shadow-md);
     }
 
     .pub-thumb-wrap {
       position: relative;
-      border-radius: 18px;
+
+      min-width: 0;
     }
 
     .pub-thumb {
       width: 100%;
-      max-width: 250px;
-      height: 185px;
+      height: 172px;
+
+      display: block;
+
       object-fit: contain;
       object-position: center;
-      border-radius: 16px;
-      display: block;
-      border: 1px solid #edf0f5;
+
+      padding: 6px;
+
       background: #ffffff;
-      padding: 8px;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.6),
-        0 5px 14px rgba(15, 23, 42, 0.035);
+
+      border:
+        1px solid
+        var(--border-soft);
+
+      border-radius: 10px;
     }
 
-    /* Journal abbreviation label on publication thumbnail */
     .journal-label {
       position: absolute;
+
       top: 8px;
       left: 8px;
+
       z-index: 3;
 
       display: inline-flex;
+
       align-items: center;
-      justify-content: center;
 
-      padding: 0.28rem 0.68rem;
-      border-radius: 8px 8px 8px 0;
+      padding:
+        0.25rem
+        0.6rem;
 
-      background: #0b2b78;
+      border-radius: 6px;
+
       color: #ffffff;
-      font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
 
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+      background: #173b69;
+
+      font-size: 0.77rem;
+      font-weight: 700;
+
+      line-height: 1.2;
+
+      letter-spacing: 0.015em;
+
+      box-shadow:
+        0 2px 6px
+        rgba(
+          16,
+          24,
+          40,
+          0.15
+        );
     }
 
-    .journal-label::after {
-      content: "";
-      position: absolute;
-      right: -8px;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-left: 8px solid #0b2b78;
-      border-top: 8px solid transparent;
+    .publication-details {
+      min-width: 0;
     }
 
     .publication-details h3 {
-      margin: 0 0 0.55rem 0;
-      font-size: 1.28rem;
-      line-height: 1.32;
-      font-weight: 700;
+      margin:
+        0
+        0
+        0.6rem;
+
+      font-size: 1.17rem;
+
+      line-height: 1.4;
+
+      font-weight: 650;
+
+      letter-spacing:
+        -0.012em;
     }
 
-    .publication-details h3 a,
-    .publication-details h3 a:visited,
-    .publication-other h3 a,
-    .publication-other h3 a:visited {
-      color: var(--blue) !important;
-      text-decoration: none !important;
+    .publication-details h3 a {
+      color: #174ea6;
     }
 
-    .publication-details h3 a:hover,
-    .publication-other h3 a:hover {
-      color: var(--orange) !important;
+    .publication-details h3 a:hover {
+      color: var(--blue);
     }
 
     .pub-meta {
       margin: 0;
+
       color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.5;
+
+      font-size: 0.91rem;
+
+      line-height: 1.55;
     }
 
     .pub-meta strong {
       color: var(--text);
-      font-weight: 700;
+
+      font-weight: 650;
     }
 
-    .pub-links {
+    .pub-meta em {
+      color: #475467;
+    }
+
+
+    /* =======================================================
+       Publication links
+       ======================================================= */
+
+    .pub-actions {
       display: flex;
+
+      align-items: center;
       flex-wrap: wrap;
-      gap: 0.48rem;
-      margin: 0.78rem 0 0 0;
+
+      gap: 0.46rem;
+
+      margin-top: 0.8rem;
     }
 
-    .pub-links a {
+    .paper-link,
+    .abstract-btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      background: var(--blue-light);
-      color: var(--blue);
-      font-size: 0.9rem;
-      font-weight: 700;
-      line-height: 1.6;
-      border: 1px solid rgba(23, 114, 208, 0.1);
-    }
 
-    .pub-links a:hover {
-      background: var(--orange-light);
-      color: var(--orange);
-      border-color: rgba(240, 146, 40, 0.22);
-      transform: translateY(-1px);
-    }
+      min-height: 30px;
 
-    .btn-link {
+      padding:
+        0.23rem
+        0.62rem;
+
+      border-radius: 6px;
+
+      border:
+        1px solid
+        #dfe4eb;
+
+      background: #ffffff;
+
+      color: #475467;
+
+      font-size: 0.8rem;
+      font-weight: 600;
+
+      line-height: 1.3;
+
       cursor: pointer;
-      user-select: none;
     }
+
+    .paper-link:hover,
+    .abstract-btn:hover {
+      color: var(--blue-dark);
+
+      border-color: #b9cce8;
+
+      background:
+        var(--blue-soft);
+    }
+
+    .abstract-btn {
+      appearance: none;
+    }
+
+
+    /* =======================================================
+       Abstract
+       ======================================================= */
 
     .abstract {
       display: none;
+
       margin-top: 0.9rem;
-      padding: 0.95rem 1.05rem;
-      border-left: 3px solid var(--blue);
-      border-radius: 12px;
-      background: #fbfcff;
-      color: #444b53;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.6);
+
+      padding:
+        0.9rem
+        1rem;
+
+      border-left:
+        2px solid
+        var(--blue);
+
+      border-radius:
+        0
+        8px
+        8px
+        0;
+
+      background:
+        #fafbfc;
+
+      color: #475467;
+
+      font-size: 0.87rem;
+
+      line-height: 1.65;
     }
+
+    .abstract.open {
+      display: block;
+    }
+
+
+    /* =======================================================
+       Scholar badge
+       ======================================================= */
 
     .scholar-badge {
       display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      margin-top: 0.75rem;
-      border-radius: 9px;
+
+      align-items: stretch;
+
+      margin-top: 0.8rem;
+
       overflow: hidden;
-      border: 1px solid #dbe4f3;
+
+      border:
+        1px solid
+        #dde4ee;
+
+      border-radius: 6px;
+
       background: #ffffff;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-      font-size: 0.9rem;
-      font-weight: 700;
+
+      font-size: 0.78rem;
+      font-weight: 650;
+
       line-height: 1;
     }
 
     .scholar-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+      border-color: #bbc9dc;
     }
 
     .scholar-left {
       display: inline-flex;
+
       align-items: center;
-      gap: 0.35rem;
-      padding: 0.4rem 0.6rem;
-      color: #323a44;
-      background: #fffdf2;
+
+      gap: 0.32rem;
+
+      padding:
+        0.4rem
+        0.55rem;
+
+      color: #344054;
+
+      background: #ffffff;
     }
 
     .scholar-icon {
-      width: 17px;
-      height: 17px;
-      display: inline-block;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #78adff 0%, #3869d4 100%);
       position: relative;
-      flex: 0 0 auto;
+
+      width: 15px;
+      height: 15px;
+
+      display: inline-block;
+
+      border-radius: 50%;
+
+      flex:
+        0
+        0
+        auto;
+
+      background:
+        linear-gradient(
+          135deg,
+          #79aaff,
+          #3869d4
+        );
     }
 
-    .scholar-icon::before {
+    .scholar-icon::after {
       content: "";
+
       position: absolute;
-      left: 3px;
+
+      left: 4px;
       top: 5px;
-      width: 11px;
-      height: 7px;
-      background: #f7d55a;
-      clip-path: polygon(50% 0%, 100% 45%, 80% 45%, 80% 100%, 20% 100%, 20% 45%, 0% 45%);
+
+      width: 7px;
+      height: 5px;
+
+      background: #f5d76e;
+
+      clip-path:
+        polygon(
+          50% 0,
+          100% 40%,
+          78% 40%,
+          78% 100%,
+          22% 100%,
+          22% 40%,
+          0 40%
+        );
     }
 
     .scholar-count {
-      padding: 0.4rem 0.6rem;
+      display: inline-flex;
+
+      align-items: center;
+
+      padding:
+        0.4rem
+        0.55rem;
+
       color: #ffffff;
-      background: linear-gradient(135deg, #5b82e6, #4568cc);
+
+      background: #4e73d8;
     }
 
-    .others-list {
-      margin-top: 0.25rem;
-      padding: 0.78rem 1.05rem 0.2rem 1.05rem;
-      border: 1px solid rgba(226, 232, 240, 0.95);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 6px 22px rgba(15, 23, 42, 0.035);
-    }
 
-    .publication-other {
-      position: relative;
-      padding: 0.24rem 0 1.05rem 1.2rem;
-      margin: 0 0 1.05rem 0;
-      border-bottom: 1px solid #eef1f6;
-    }
-
-    .publication-other:last-child {
-      margin-bottom: 0;
-      border-bottom: none;
-    }
-
-    .publication-other::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.65rem;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 0 4px rgba(23, 114, 208, 0.11);
-    }
-
-    .publication-other h3 {
-      margin: 0 0 0.35rem 0;
-      font-size: 1.06rem;
-      line-height: 1.36;
-      font-weight: 700;
-    }
-
-    .publication-other .pub-meta {
-      margin: 0;
-      line-height: 1.43;
-      font-size: 0.94rem;
-      color: var(--muted);
-    }
+    /* =======================================================
+       Footer
+       ======================================================= */
 
     footer {
+      margin-top: 4.5rem;
+
+      padding:
+        1.8rem
+        0
+        1rem;
+
+      border-top:
+        1px solid
+        var(--border);
+
       text-align: center;
-      font-size: 0.9rem;
-      color: var(--light-muted);
-      margin: 3.2rem 0 1rem 0;
+
+      color:
+        var(--light-muted);
+
+      font-size: 0.83rem;
     }
 
     footer p {
-      margin: 0.18rem 0;
+      margin:
+        0.15rem
+        0;
     }
 
     .footer-note {
-      font-size: 0.82rem;
-      color: #9aa3af;
+      font-size: 0.77rem;
     }
 
-    @media (max-width: 820px) {
+
+    /* =======================================================
+       Mobile responsive
+       ======================================================= */
+
+    @media (
+      max-width: 860px
+    ) {
+
+      .nav-inner {
+        padding:
+          0.72rem
+          1rem;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+
+        font-size: 0.82rem;
+      }
+
+      .nav-links a:not(.nav-cv) {
+        display: none;
+      }
+
       .container {
-        padding: 1rem;
+        width:
+          min(
+            100% - 1.5rem,
+            var(--max-width)
+          );
+
+        padding-top: 1.4rem;
       }
 
-      .top-card {
-        padding: 1.25rem;
-        border-radius: 24px;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 2.2rem;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      .profile-grid {
+      .hero {
         grid-template-columns: 1fr;
-        gap: 1.4rem;
-      }
 
-      .profile-side {
-        padding-top: 0;
+        gap: 1.6rem;
+
+        padding: 1.4rem;
       }
 
       .profile-img {
-        width: 155px;
-        height: 155px;
-        margin: 0 auto 1rem auto;
+        width: 150px;
+        height: 150px;
       }
 
-      .bio-text p {
-        font-size: 1rem;
+      .hero h1 {
+        text-align: center;
       }
 
-      .section-head h2::after {
-        width: 46px;
+      .hero-content {
+        text-align: left;
       }
 
-      .publication-flex {
+      .interest-title {
+        text-align: left;
+      }
+
+      .publication-card {
         grid-template-columns: 1fr;
+
         padding: 1rem;
       }
 
-      .pub-thumb {
-        max-width: 260px;
-        height: 185px;
+      .pub-thumb-wrap {
+        width: min(100%, 280px);
+
         margin: 0 auto;
-        object-fit: contain;
       }
 
-      .journal-label {
-        top: 8px;
-        left: calc(50% - 130px + 8px);
-        font-size: 0.86rem;
+      .pub-thumb {
+        height: 190px;
+      }
+
+      .section {
+        margin-top: 3rem;
+      }
+    }
+
+
+    @media (
+      max-width: 520px
+    ) {
+
+      .container {
+        width:
+          calc(
+            100% - 1rem
+          );
+      }
+
+      .hero {
+        padding: 1.1rem;
+
+        border-radius: 14px;
+      }
+
+      .profile-img {
+        width: 135px;
+        height: 135px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-links {
+        gap: 0.35rem;
+      }
+
+      .contact-links a {
+        font-size: 0.78rem;
+      }
+
+      .publication-card {
+        border-radius: 12px;
       }
 
       .publication-details h3 {
-        font-size: 1.18rem;
+        font-size: 1.05rem;
+      }
+
+      .pub-meta {
+        font-size: 0.86rem;
+      }
+
+      .section-title {
+        font-size: 1.65rem;
       }
     }
+
   </style>
 </head>
 
+
 <body>
-  <div class="container">
-    <section class="top-card" aria-label="Profile section">
-      <div class="profile-grid">
-        <div class="profile-side">
-          <img src="images/kai_zhu_photo.jpg" alt="Portrait of Kai Zhu" class="profile-img" />
 
-          <nav class="contact-links" aria-label="Contact links">
-            <a href="data/KaiZhu_CV.pdf" target="_blank" rel="noopener">CV</a>
-            <a href="mailto:kaizhu2001@zju.edu.cn">Email</a>
-            <a href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://github.com/Kai-Zhu-2001" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/kai-zhu-604328351/" target="_blank" rel="noopener">LinkedIn</a>
-          </nav>
-        </div>
+  <!-- =======================================================
+       Navigation
+       ======================================================= -->
 
-        <div class="bio-text">
-          <h1>Kai Zhu 「祝凯」</h1>
+  <header class="site-header">
 
-          <p>
-            I am a Ph.D. student in Pharmaceutical Science at
-            <a href="https://www.zju.edu.cn" target="_blank" rel="noopener">Zhejiang University</a>, advised by
-            <a href="https://cadd.zju.edu.cn/" target="_blank" rel="noopener">Prof. Hou Tingjun</a>.
-            I am also a visiting student at the
-            <a href="https://www.iit.it/" target="_blank" rel="noopener">Italian Institute of Technology</a>, working with
-            <a href="https://luigibonati.github.io/" target="_blank" rel="noopener">Luigi Bonati</a> and
-            <a href="https://www.iit.it/people-details/-/people/michele-parrinello" target="_blank" rel="noopener">Prof. Michele Parrinello</a>.
-          </p>
+    <nav
+      class="nav-inner"
+      aria-label="Main navigation"
+    >
 
-          <p>
-            My research focuses on developing machine learning-based enhanced sampling methods and their applications to atomic systems.
-          </p>
+      <a
+        class="nav-brand"
+        href="#about"
+      >
+        Kai Zhu
+      </a>
 
-          <p>
-            I enjoy designing new algorithms and making them accessible through open-source software,
-            such as <a href="https://github.com/luigibonati/mlcolvar" target="_blank" rel="noopener">mlcolvar</a>.
-          </p>
+      <div class="nav-links">
 
-          <h3 class="interest-title">Research Interests</h3>
-          <div class="research-tags">
-            <span>Machine-learning collective variables</span>
-            <span>Enhanced sampling</span>
-            <span>Atomistic simulations</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <a href="#about">
+          About
+        </a>
 
-    <hr />
+        <a href="#publications">
+          Publications
+        </a>
 
-    <section aria-label="Publications">
-      <div class="section-head">
-        <h2>Publications</h2>
+        <a
+          href="https://github.com/Kai-Zhu-2001"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <a
+          class="nav-cv"
+          href="data/KaiZhu_CV.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
+
       </div>
 
-      <p class="pub-legend">
-        <span title="Equal contribution">†</span> Equal contribution
-        <span title="Corresponding author">*</span> Corresponding author
-      </p>
+    </nav>
 
-      <h3 class="subsection-title">Featured work</h3>
+  </header>
 
-      <article class="publication-flex">
-        <div class="pub-thumb-wrap">
-          <span class="journal-label">arXiv</span>
-          <img src="images/publication/SelfTICA.png" alt="SelfTICA framework" class="pub-thumb" />
-        </div>
 
-        <div class="publication-details">
-          <h3>
-            <a href="https://arxiv.org/pdf/2606.15495" target="_blank" rel="noopener">
-              Contrastive learning of dynamical representations for enhanced molecular sampling
-            </a>
-          </h3>
+  <!-- =======================================================
+       Main content
+       ======================================================= -->
 
-          <p class="pub-meta">
-            <strong>Kai Zhu†</strong>, Jintu Zhang†, Pietro Novelli, Tingjun Hou*, Luigi Bonati*<br />
-            <em>arXiv</em> arXiv:2606.15495 (2026)
-          </p>
+  <main class="container">
 
-          <p class="pub-links">
-            <a class="btn-link" onclick="toggleAbstract('SelfTICA_abs')">Abstract</a>
-            <a href="https://arxiv.org/pdf/2606.15495" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/Kai-Zhu-2001/SelfTICA" target="_blank" rel="noopener">Code</a>
-          </p>
+    <!-- =====================================================
+         About
+         ===================================================== -->
 
-          <a class="scholar-badge"
-            href="https://scholar.google.com/scholar?q=Contrastive+learning+of+dynamical+representations+for+enhanced+molecular+sampling"
+    <section
+      id="about"
+      class="hero"
+      aria-label="About Kai Zhu"
+    >
+
+      <div class="profile-side">
+
+        <img
+          src="images/kai_zhu_photo.jpg"
+          alt="Portrait of Kai Zhu"
+          class="profile-img"
+        />
+
+        <nav
+          class="contact-links"
+          aria-label="Contact links"
+        >
+
+          <a
+            href="mailto:kaizhu2001@zju.edu.cn"
+          >
+            Email
+          </a>
+
+          <a
+            href="https://scholar.google.com/citations?user=T5KSWVUAAAAJ&hl=zh-TW"
             target="_blank"
             rel="noopener"
-            data-title="Contrastive learning of dynamical representations for enhanced molecular sampling"
-            aria-label="Google Scholar citations for Contrastive learning of dynamical representations for enhanced molecular sampling">
-            <span class="scholar-left">
-              <span class="scholar-icon"></span>
-              scholar
-            </span>
-            <span class="scholar-count">0</span>
+          >
+            Scholar
           </a>
 
-          <div id="SelfTICA_abs" class="abstract">
-            Identifying collective variables that capture slow dynamical modes is essential for sampling rare events in complex systems. Existing machine-learning approaches often require predefined metastable states, carefully chosen descriptors, or training trajectories with high-quality kinetic information. Here, we introduce SelfTICA, a self-supervised contrastive-learning framework that reformulates collective-variable discovery as dynamical representation learning. SelfTICA defines positive and negative pairs from time-lagged molecular configurations, learns reusable features through a contrastive objective linked to spectral variational principles, and extracts orthogonal slow modes by applying time-lagged independent component analysis in the learned representation space. By decoupling representation learning from slow-mode extraction, SelfTICA avoids direct optimization of eigendecomposition-based objectives and enables spectra and collective variables to be evaluated across lag times without retraining. Across different atomistic systems, SelfTICA learns dynamical representations from limited, biased, or exploratory data and converts them into collective variables that accelerate rare-event exploration and improve free-energy convergence.
+          <a
+            href="https://github.com/Kai-Zhu-2001"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kai-zhu-604328351/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="data/KaiZhu_CV.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            CV
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <div class="hero-content">
+
+        <h1>
+          Kai Zhu 「祝凯」
+        </h1>
+
+        <p>
+          I am a Ph.D. student in Pharmaceutical Science at
+          <a
+            href="https://www.zju.edu.cn"
+            target="_blank"
+            rel="noopener"
+          >
+            Zhejiang University
+          </a>,
+          advised by
+          <a
+            href="https://cadd.zju.edu.cn/"
+            target="_blank"
+            rel="noopener"
+          >
+            Prof. Hou Tingjun
+          </a>.
+          I am also a visiting student at the
+          <a
+            href="https://www.iit.it/"
+            target="_blank"
+            rel="noopener"
+          >
+            Italian Institute of Technology
+          </a>,
+          working with
+          <a
+            href="https://luigibonati.github.io/"
+            target="_blank"
+            rel="noopener"
+          >
+            Luigi Bonati
+          </a>
+          and
+          <a
+            href="https://www.iit.it/people-details/-/people/michele-parrinello"
+            target="_blank"
+            rel="noopener"
+          >
+            Prof. Michele Parrinello
+          </a>.
+        </p>
+
+        <p>
+          My research focuses on developing
+          machine learning-based enhanced sampling
+          methods and their applications to atomic
+          systems.
+        </p>
+
+        <p>
+          I enjoy designing new algorithms and making
+          them accessible through open-source software,
+          such as
+          <a
+            href="https://github.com/luigibonati/mlcolvar"
+            target="_blank"
+            rel="noopener"
+          >
+            mlcolvar
+          </a>.
+        </p>
+
+
+        <div class="interest-title">
+          Research interests
+        </div>
+
+        <div class="research-tags">
+
+          <span>
+            Machine-learning collective variables
+          </span>
+
+          <span>
+            Enhanced sampling
+          </span>
+
+          <span>
+            Atomistic simulations
+          </span>
+
+          <span>
+            Dynamical representation learning
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Publications
+         ===================================================== -->
+
+    <section
+      id="publications"
+      class="section"
+      aria-label="Publications"
+    >
+
+      <div class="section-header">
+
+        <div class="section-title-wrap">
+
+          <p class="section-kicker">
+            Research
+          </p>
+
+          <h2 class="section-title">
+            Selected publications
+          </h2>
+
+          <div class="section-line"></div>
+
+          <p class="section-description">
+            † Equal contribution.
+            * Corresponding author.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="publication-list">
+
+
+        <!-- =================================================
+             SelfTICA
+             ================================================= -->
+
+        <article class="publication-card">
+
+          <div class="pub-thumb-wrap">
+
+            <span class="journal-label">
+              arXiv
+            </span>
+
+            <img
+              src="images/publication/SelfTICA.png"
+              alt="SelfTICA framework"
+              class="pub-thumb"
+            />
+
           </div>
-        </div>
-      </article>
 
-      <article class="publication-flex">
-        <div class="pub-thumb-wrap">
-          <span class="journal-label">Nat. Commun.</span>
-          <img src="images/publication/AR-NTD.jpg" alt="Illustration of AR-NTD enhanced sampling workflow" class="pub-thumb" />
-        </div>
 
-        <div class="publication-details">
-          <h3>
-            <a href="https://www.nature.com/articles/s41467-026-73863-x" target="_blank" rel="noopener">
-              Targeting the intrinsically disordered AR-NTD through a machine learning-based enhanced sampling workflow
+          <div class="publication-details">
+
+            <h3>
+              <a
+                href="https://arxiv.org/pdf/2606.15495"
+                target="_blank"
+                rel="noopener"
+              >
+                Contrastive learning of dynamical
+                representations for enhanced molecular
+                sampling
+              </a>
+            </h3>
+
+            <p class="pub-meta">
+              <strong>Kai Zhu†</strong>,
+              Jintu Zhang†,
+              Pietro Novelli,
+              Tingjun Hou*,
+              Luigi Bonati*
+              <br />
+
+              <em>arXiv</em>
+              arXiv:2606.15495 (2026)
+            </p>
+
+
+            <div class="pub-actions">
+
+              <button
+                class="abstract-btn"
+                type="button"
+                onclick="toggleAbstract(
+                  'SelfTICA_abs',
+                  this
+                )"
+              >
+                Abstract
+              </button>
+
+              <a
+                class="paper-link"
+                href="https://arxiv.org/pdf/2606.15495"
+                target="_blank"
+                rel="noopener"
+              >
+                arXiv
+              </a>
+
+              <a
+                class="paper-link"
+                href="https://github.com/Kai-Zhu-2001/SelfTICA"
+                target="_blank"
+                rel="noopener"
+              >
+                Code
+              </a>
+
+            </div>
+
+
+            <a
+              class="scholar-badge"
+              href="https://scholar.google.com/scholar?q=Contrastive+learning+of+dynamical+representations+for+enhanced+molecular+sampling"
+              target="_blank"
+              rel="noopener"
+              aria-label="Google Scholar citations for SelfTICA"
+            >
+
+              <span class="scholar-left">
+
+                <span class="scholar-icon"></span>
+
+                scholar
+
+              </span>
+
+              <span class="scholar-count">
+                0
+              </span>
+
             </a>
-          </h3>
 
-          <p class="pub-meta">
-            <strong>Kai Zhu†</strong>, Huating Wang†, Jintu Zhang†, Renling Hu, Linlong Jiang, Hui Zhang, Yu Kang, Tingjun Hou*, Dan Li*<br />
-            <em>Nat. Commun.</em> 17, 7206 (2026)
-          </p>
 
-          <p class="pub-links">
-            <a class="btn-link" onclick="toggleAbstract('ARNTD_abs')">Abstract</a>
-            <a href="https://github.com/Kai-Zhu-2001/AR-NTD_MD" target="_blank" rel="noopener">Code</a>
-          </p>
+            <div
+              id="SelfTICA_abs"
+              class="abstract"
+            >
+              Identifying collective variables that
+              capture slow dynamical modes is essential
+              for sampling rare events in complex
+              systems. Existing machine-learning
+              approaches often require predefined
+              metastable states, carefully chosen
+              descriptors, or training trajectories
+              with high-quality kinetic information.
 
-          <a class="scholar-badge"
-             href="https://scholar.google.com/scholar?q=Targeting+the+intrinsically+disordered+AR-NTD+through+a+machine+learning-based+enhanced+sampling+workflow"
-             target="_blank"
-             rel="noopener"
-             data-title="Targeting the intrinsically disordered AR-NTD through a machine learning-based enhanced sampling workflow"
-             aria-label="Google Scholar citations for Targeting the intrinsically disordered AR-NTD">
-            <span class="scholar-left">
-              <span class="scholar-icon"></span>
-              scholar
-            </span>
-            <span class="scholar-count">0</span>
-          </a>
+              Here, we introduce SelfTICA, a
+              self-supervised contrastive-learning
+              framework that reformulates
+              collective-variable discovery as
+              dynamical representation learning.
 
-          <div id="ARNTD_abs" class="abstract">
-            Intrinsically disordered proteins are challenging drug targets because they lack stable three-dimensional structures and instead exist as dynamic conformational ensembles. In this work, we developed a machine learning-based enhanced sampling workflow to target the intrinsically disordered N-terminal domain of the androgen receptor (AR-NTD), a therapeutic target for drug-resistant prostate cancer. By combining enhanced sampling simulations with machine-learning collective variables, we characterized the conformational landscape of the Tau-5 region, identified druggable conformations, and revealed key molecular features involved in ligand recognition. These insights enabled structure-based virtual screening and led to the identification of K53, an AR-NTD antagonist with anti-proliferative activity in enzalutamide-resistant prostate cancer cells.
+              SelfTICA defines positive and negative
+              pairs from time-lagged molecular
+              configurations, learns reusable features
+              through a contrastive objective linked
+              to spectral variational principles, and
+              extracts orthogonal slow modes by
+              applying time-lagged independent
+              component analysis in the learned
+              representation space.
+
+              By decoupling representation learning
+              from slow-mode extraction, SelfTICA
+              avoids direct optimization of
+              eigendecomposition-based objectives and
+              enables spectra and collective variables
+              to be evaluated across lag times without
+              retraining.
+
+              Across different atomistic systems,
+              SelfTICA learns dynamical
+              representations from limited, biased, or
+              exploratory data and converts them into
+              collective variables that accelerate
+              rare-event exploration and improve
+              free-energy convergence.
+            </div>
+
           </div>
-        </div>
-      </article>
 
-      <article class="publication-flex">
-        <div class="pub-thumb-wrap">
-          <span class="journal-label">Chem. Rev.</span>
-          <img src="images/publication/MLES.png" alt="Cover image for MLES review" class="pub-thumb" />
-        </div>
+        </article>
 
-        <div class="publication-details">
-          <h3>
-            <a href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700" target="_blank" rel="noopener">
-              Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications
+
+        <!-- =================================================
+             AR-NTD
+             ================================================= -->
+
+        <article class="publication-card">
+
+          <div class="pub-thumb-wrap">
+
+            <span class="journal-label">
+              Nat. Commun.
+            </span>
+
+            <img
+              src="images/publication/AR-NTD.jpg"
+              alt="AR-NTD enhanced sampling workflow"
+              class="pub-thumb"
+            />
+
+          </div>
+
+
+          <div class="publication-details">
+
+            <h3>
+
+              <a
+                href="https://www.nature.com/articles/s41467-026-73863-x"
+                target="_blank"
+                rel="noopener"
+              >
+                Targeting the intrinsically disordered
+                AR-NTD through a machine learning-based
+                enhanced sampling workflow
+              </a>
+
+            </h3>
+
+
+            <p class="pub-meta">
+
+              <strong>Kai Zhu†</strong>,
+              Huating Wang†,
+              Jintu Zhang†,
+              Renling Hu,
+              Linlong Jiang,
+              Hui Zhang,
+              Yu Kang,
+              Tingjun Hou*,
+              Dan Li*
+
+              <br />
+
+              <em>Nat. Commun.</em>
+              17, 7206 (2026)
+
+            </p>
+
+
+            <div class="pub-actions">
+
+              <button
+                class="abstract-btn"
+                type="button"
+                onclick="toggleAbstract(
+                  'ARNTD_abs',
+                  this
+                )"
+              >
+                Abstract
+              </button>
+
+              <a
+                class="paper-link"
+                href="https://www.nature.com/articles/s41467-026-73863-x"
+                target="_blank"
+                rel="noopener"
+              >
+                Paper
+              </a>
+
+              <a
+                class="paper-link"
+                href="https://github.com/Kai-Zhu-2001/AR-NTD_MD"
+                target="_blank"
+                rel="noopener"
+              >
+                Code
+              </a>
+
+            </div>
+
+
+            <a
+              class="scholar-badge"
+              href="https://scholar.google.com/scholar?q=Targeting+the+intrinsically+disordered+AR-NTD+through+a+machine+learning-based+enhanced+sampling+workflow"
+              target="_blank"
+              rel="noopener"
+              aria-label="Google Scholar citations for AR-NTD work"
+            >
+
+              <span class="scholar-left">
+
+                <span class="scholar-icon"></span>
+
+                scholar
+
+              </span>
+
+              <span class="scholar-count">
+                0
+              </span>
+
             </a>
-          </h3>
 
-          <p class="pub-meta">
-            <strong>Kai Zhu†</strong>, Enrico Trizio†, Jintu Zhang, Renling Hu, Linlong Jiang, Tingjun Hou*, Luigi Bonati*<br />
-            <em>Chem. Rev.</em> 2026, 126, 1, 671-713
-          </p>
 
-          <p class="pub-links">
-            <a class="btn-link" onclick="toggleAbstract('MLES_abs')">Abstract</a>
-            <a href="https://arxiv.org/abs/2509.04291" target="_blank" rel="noopener">arXiv</a>
-          </p>
+            <div
+              id="ARNTD_abs"
+              class="abstract"
+            >
+              Intrinsically disordered proteins are
+              challenging drug targets because they
+              lack stable three-dimensional structures
+              and instead exist as dynamic
+              conformational ensembles.
 
-          <a class="scholar-badge"
-             href="https://scholar.google.com/scholar?q=Enhanced+Sampling+in+the+Age+of+Machine+Learning+Algorithms+and+Applications"
-             target="_blank"
-             rel="noopener"
-             data-title="Enhanced Sampling in the Age of Machine Learning: Algorithms and Applications"
-             aria-label="Google Scholar citations for Enhanced Sampling in the Age of Machine Learning">
-            <span class="scholar-left">
-              <span class="scholar-icon"></span>
-              scholar
-            </span>
-            <span class="scholar-count">79</span>
-          </a>
+              In this work, we developed a machine
+              learning-based enhanced sampling
+              workflow to target the intrinsically
+              disordered N-terminal domain of the
+              androgen receptor (AR-NTD), a
+              therapeutic target for drug-resistant
+              prostate cancer.
 
-          <div id="MLES_abs" class="abstract">
-            Molecular dynamics simulations hold great promise for providing insight into the microscopic behavior of complex molecular systems. However, their effectiveness is often constrained by long timescales associated with rare events. Enhanced sampling methods have been developed to address these challenges, and recent years have seen a growing integration with machine learning techniques. This Review provides a comprehensive overview of how they are reshaping the field, with a particular focus on the data-driven construction of collective variables. Furthermore, these techniques have also improved biasing schemes and unlocked novel strategies via reinforcement learning and generative approaches. In addition to methodological advances, we highlight applications spanning different areas, such as biomolecular processes, ligand binding, catalytic reactions, and phase transitions. We conclude by outlining future directions aimed at enabling more automated strategies for rareevent sampling.
+              By combining enhanced sampling
+              simulations with machine-learning
+              collective variables, we characterized
+              the conformational landscape of the
+              Tau-5 region, identified druggable
+              conformations, and revealed key
+              molecular features involved in ligand
+              recognition.
+
+              These insights enabled structure-based
+              virtual screening and led to the
+              identification of K53, an AR-NTD
+              antagonist with anti-proliferative
+              activity in enzalutamide-resistant
+              prostate cancer cells.
+            </div>
+
           </div>
-        </div>
-      </article>
 
-      <article class="publication-flex">
-        <div class="pub-thumb-wrap">
-          <span class="journal-label">Nat. Commun.</span>
-          <img src="images/publication/LiTen.jpg" alt="Illustration for LiTEN work" class="pub-thumb" />
-        </div>
+        </article>
 
-        <div class="publication-details">
-          <h3>
-            <a href="https://www.nature.com/articles/s41467-026-70377-4" target="_blank" rel="noopener">
-              A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention
+
+        <!-- =================================================
+             Chemical Reviews
+             ================================================= -->
+
+        <article class="publication-card">
+
+          <div class="pub-thumb-wrap">
+
+            <span class="journal-label">
+              Chem. Rev.
+            </span>
+
+            <img
+              src="images/publication/MLES.png"
+              alt="Enhanced sampling in the age of machine learning"
+              class="pub-thumb"
+            />
+
+          </div>
+
+
+          <div class="publication-details">
+
+            <h3>
+
+              <a
+                href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700"
+                target="_blank"
+                rel="noopener"
+              >
+                Enhanced Sampling in the Age of Machine
+                Learning: Algorithms and Applications
+              </a>
+
+            </h3>
+
+
+            <p class="pub-meta">
+
+              <strong>Kai Zhu†</strong>,
+              Enrico Trizio†,
+              Jintu Zhang,
+              Renling Hu,
+              Linlong Jiang,
+              Tingjun Hou*,
+              Luigi Bonati*
+
+              <br />
+
+              <em>Chem. Rev.</em>
+              2026, 126, 1, 671-713
+
+            </p>
+
+
+            <div class="pub-actions">
+
+              <button
+                class="abstract-btn"
+                type="button"
+                onclick="toggleAbstract(
+                  'MLES_abs',
+                  this
+                )"
+              >
+                Abstract
+              </button>
+
+              <a
+                class="paper-link"
+                href="https://pubs.acs.org/doi/10.1021/acs.chemrev.5c00700"
+                target="_blank"
+                rel="noopener"
+              >
+                Paper
+              </a>
+
+              <a
+                class="paper-link"
+                href="https://arxiv.org/abs/2509.04291"
+                target="_blank"
+                rel="noopener"
+              >
+                arXiv
+              </a>
+
+            </div>
+
+
+            <a
+              class="scholar-badge"
+              href="https://scholar.google.com/scholar?q=Enhanced+Sampling+in+the+Age+of+Machine+Learning+Algorithms+and+Applications"
+              target="_blank"
+              rel="noopener"
+              aria-label="Google Scholar citations for Chemical Reviews article"
+            >
+
+              <span class="scholar-left">
+
+                <span class="scholar-icon"></span>
+
+                scholar
+
+              </span>
+
+              <span class="scholar-count">
+                79
+              </span>
+
             </a>
-          </h3>
 
-          <p class="pub-meta">
-            Qun Su†, <strong>Kai Zhu†</strong>, Qiaolin Gou†, Jintu Zhang, Renling Hu, Yurong Li, Yongze Wang, Hui Zhang, Ziyi You, Linlong Jiang, Yu Kang, Jike Wang, Chang-Yu Hsieh, Tingjun Hou<br />
-            <em>Nat. Commun.</em> 17, 3639 (2026).
-          </p>
 
-          <p class="pub-links">
-            <a class="btn-link" onclick="toggleAbstract('LiTEN_abs')">Abstract</a>
-            <a href="https://arxiv.org/abs/2507.00884" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://github.com/lingcon01/LiTEN" target="_blank" rel="noopener">Code</a>
-          </p>
+            <div
+              id="MLES_abs"
+              class="abstract"
+            >
+              Molecular dynamics simulations hold
+              great promise for providing insight into
+              the microscopic behavior of complex
+              molecular systems. However, their
+              effectiveness is often constrained by
+              long timescales associated with rare
+              events.
 
-          <a class="scholar-badge"
-             href="https://scholar.google.com/scholar?q=A+Scalable+and+Quantum-Accurate+Foundation+Model+for+Biomolecular+Force+Field+via+Linearly+Tensorized+Quadrangle+Attention"
-             target="_blank"
-             rel="noopener"
-             data-title="A Scalable and Quantum-Accurate Foundation Model for Biomolecular Force Field via Linearly Tensorized Quadrangle Attention"
-             aria-label="Google Scholar citations for LiTEN">
-            <span class="scholar-left">
-              <span class="scholar-icon"></span>
-              scholar
-            </span>
-            <span class="scholar-count">2</span>
-          </a>
+              Enhanced sampling methods have been
+              developed to address these challenges,
+              and recent years have seen a growing
+              integration with machine learning
+              techniques.
 
-          <div id="LiTEN_abs" class="abstract">
-            Accurate atomistic biomolecular simulations are vital for disease mechanism understanding, drug discovery, and biomaterial design, but existing simulation methods exhibit significant limitations. Classical force fields are efficient but lack accuracy for transition states and fine conformational details critical in many chemical and biological processes. Quantum Mechanics (QM) methods are highly accurate but computationally infeasible for large-scale or long-time simulations. AI-based force fields (AIFFs) aim to achieve QM-level accuracy with efficiency but struggle to balance many-body modeling complexity, accuracy, and speed, often constrained by limited training data and insufficient validation for generalizability. To overcome these challenges, we introduce LiTEN, a novel equivariant neural network with Tensorized Quadrangle Attention (TQA). TQA efficiently models three- and four-body interactions with linear complexity by reparameterizing high-order tensor features via vector operations, avoiding costly spherical harmonics. Building on LiTEN, LiTEN-FF is a robust AIFF foundation model, pre-trained on the extensive nablaDFT dataset for broad chemical generalization and fine-tuned on SPICE for accurate solvated system simulations. LiTEN achieves state-of-the-art (SOTA) performance across most evaluation subsets of rMD17, MD22, and Chignolin, outperforming leading models such as MACE, NequIP, and EquiFormer. LiTEN-FF enables the most comprehensive suite of downstream biomolecular modeling tasks to date, including QM-level conformer searches, geometry optimization, and free energy surface construction, while offering 10x faster inference than MACE-OFF for large biomolecules (~1000 atoms). In summary, we present a physically grounded, highly efficient framework that advances complex biomolecular modeling, providing a versatile foundation for drug discovery and related applications.
+              This Review provides a comprehensive
+              overview of how they are reshaping the
+              field, with a particular focus on the
+              data-driven construction of collective
+              variables.
+
+              Furthermore, these techniques have also
+              improved biasing schemes and unlocked
+              novel strategies via reinforcement
+              learning and generative approaches.
+
+              In addition to methodological advances,
+              we highlight applications spanning
+              different areas, such as biomolecular
+              processes, ligand binding, catalytic
+              reactions, and phase transitions.
+
+              We conclude by outlining future
+              directions aimed at enabling more
+              automated strategies for rare-event
+              sampling.
+            </div>
+
           </div>
-        </div>
-      </article>
+
+        </article>
+
+
+        <!-- =================================================
+             LiTEN
+             ================================================= -->
+
+        <article class="publication-card">
+
+          <div class="pub-thumb-wrap">
+
+            <span class="journal-label">
+              Nat. Commun.
+            </span>
+
+            <img
+              src="images/publication/LiTen.jpg"
+              alt="LiTEN foundation model"
+              class="pub-thumb"
+            />
+
+          </div>
+
+
+          <div class="publication-details">
+
+            <h3>
+
+              <a
+                href="https://www.nature.com/articles/s41467-026-70377-4"
+                target="_blank"
+                rel="noopener"
+              >
+                A Scalable and Quantum-Accurate
+                Foundation Model for Biomolecular
+                Force Field via Linearly Tensorized
+                Quadrangle Attention
+              </a>
+
+            </h3>
+
+
+            <p class="pub-meta">
+
+              Qun Su†,
+              <strong>Kai Zhu†</strong>,
+              Qiaolin Gou†,
+              Jintu Zhang,
+              Renling Hu,
+              Yurong Li,
+              Yongze Wang,
+              Hui Zhang,
+              Ziyi You,
+              Linlong Jiang,
+              Yu Kang,
+              Jike Wang,
+              Chang-Yu Hsieh,
+              Tingjun Hou
+
+              <br />
+
+              <em>Nat. Commun.</em>
+              17, 3639 (2026)
+
+            </p>
+
+
+            <div class="pub-actions">
+
+              <button
+                class="abstract-btn"
+                type="button"
+                onclick="toggleAbstract(
+                  'LiTEN_abs',
+                  this
+                )"
+              >
+                Abstract
+              </button>
+
+              <a
+                class="paper-link"
+                href="https://www.nature.com/articles/s41467-026-70377-4"
+                target="_blank"
+                rel="noopener"
+              >
+                Paper
+              </a>
+
+              <a
+                class="paper-link"
+                href="https://arxiv.org/abs/2507.00884"
+                target="_blank"
+                rel="noopener"
+              >
+                arXiv
+              </a>
+
+              <a
+                class="paper-link"
+                href="https://github.com/lingcon01/LiTEN"
+                target="_blank"
+                rel="noopener"
+              >
+                Code
+              </a>
+
+            </div>
+
+
+            <a
+              class="scholar-badge"
+              href="https://scholar.google.com/scholar?q=A+Scalable+and+Quantum-Accurate+Foundation+Model+for+Biomolecular+Force+Field+via+Linearly+Tensorized+Quadrangle+Attention"
+              target="_blank"
+              rel="noopener"
+              aria-label="Google Scholar citations for LiTEN"
+            >
+
+              <span class="scholar-left">
+
+                <span class="scholar-icon"></span>
+
+                scholar
+
+              </span>
+
+              <span class="scholar-count">
+                2
+              </span>
+
+            </a>
+
+
+            <div
+              id="LiTEN_abs"
+              class="abstract"
+            >
+              Accurate atomistic biomolecular
+              simulations are vital for disease
+              mechanism understanding, drug discovery,
+              and biomaterial design, but existing
+              simulation methods exhibit significant
+              limitations.
+
+              Classical force fields are efficient but
+              lack accuracy for transition states and
+              fine conformational details critical in
+              many chemical and biological processes.
+
+              Quantum Mechanics methods are highly
+              accurate but computationally infeasible
+              for large-scale or long-time
+              simulations.
+
+              AI-based force fields aim to achieve
+              quantum-level accuracy with efficiency
+              but struggle to balance many-body
+              modeling complexity, accuracy, and
+              speed.
+
+              To overcome these challenges, we
+              introduce LiTEN, an equivariant neural
+              network with Tensorized Quadrangle
+              Attention.
+
+              TQA efficiently models three- and
+              four-body interactions with linear
+              complexity by reparameterizing
+              high-order tensor features via vector
+              operations.
+
+              Building on LiTEN, LiTEN-FF is a robust
+              AI force-field foundation model
+              pre-trained on the nablaDFT dataset and
+              fine-tuned on SPICE.
+
+              LiTEN achieves strong performance across
+              rMD17, MD22, and Chignolin while
+              enabling downstream biomolecular
+              modeling tasks including conformer
+              searches, geometry optimization, and
+              free-energy-surface construction.
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Footer
+         ===================================================== -->
 
     <footer>
-      <p>© 2026 Kai Zhu. Built and maintained by Kai Zhu.</p>
-      <p class="footer-note">Machine learning for molecular simulation and enhanced sampling.</p>
+
+      <p>
+        © 2026 Kai Zhu.
+      </p>
+
+      <p class="footer-note">
+        Machine learning for molecular simulation and
+        enhanced sampling.
+      </p>
+
     </footer>
-  </div>
+
+  </main>
+
+
+  <!-- =======================================================
+       JavaScript
+       ======================================================= -->
 
   <script>
-    function toggleAbstract(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+
+    function toggleAbstract(
+      id,
+      button
+    ) {
+
+      const element =
+        document.getElementById(id);
+
+      if (!element) {
+        return;
+      }
+
+      const isOpen =
+        element.classList.contains(
+          "open"
+        );
+
+      element.classList.toggle(
+        "open"
+      );
+
+      if (button) {
+
+        button.textContent =
+          isOpen
+            ? "Abstract"
+            : "Hide abstract";
+
+        button.setAttribute(
+          "aria-expanded",
+          String(!isOpen)
+        );
+
+      }
+
     }
+
   </script>
+
 </body>
+
 </html>
