@@ -1414,9 +1414,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                Contrastive learning of dynamical
-                representations for enhanced molecular
-                sampling
+                SelfTICA: contrastive learning of dynamical representations for rare-event sampling and characterization
               </a>
             </h3>
 
@@ -1469,7 +1467,7 @@
 
             <a
               class="scholar-badge"
-              href="https://scholar.google.com/scholar?q=Contrastive+learning+of+dynamical+representations+for+enhanced+molecular+sampling"
+              href="https://scholar.google.com/scholar?q=SelfTICA:+contrastive+learning+of+dynamical+representations+for+rare-event+sampling+and+characterization"
               target="_blank"
               rel="noopener"
               aria-label="Google Scholar citations for SelfTICA"
@@ -1494,46 +1492,7 @@
               id="SelfTICA_abs"
               class="abstract"
             >
-              Identifying collective variables that
-              capture slow dynamical modes is essential
-              for sampling rare events in complex
-              systems. Existing machine-learning
-              approaches often require predefined
-              metastable states, carefully chosen
-              descriptors, or training trajectories
-              with high-quality kinetic information.
-
-              Here, we introduce SelfTICA, a
-              self-supervised contrastive-learning
-              framework that reformulates
-              collective-variable discovery as
-              dynamical representation learning.
-
-              SelfTICA defines positive and negative
-              pairs from time-lagged molecular
-              configurations, learns reusable features
-              through a contrastive objective linked
-              to spectral variational principles, and
-              extracts orthogonal slow modes by
-              applying time-lagged independent
-              component analysis in the learned
-              representation space.
-
-              By decoupling representation learning
-              from slow-mode extraction, SelfTICA
-              avoids direct optimization of
-              eigendecomposition-based objectives and
-              enables spectra and collective variables
-              to be evaluated across lag times without
-              retraining.
-
-              Across different atomistic systems,
-              SelfTICA learns dynamical
-              representations from limited, biased, or
-              exploratory data and converts them into
-              collective variables that accelerate
-              rare-event exploration and improve
-              free-energy convergence.
+Rare events govern many important molecular processes but remain difficult to characterize within accessible simulation timescales. This challenge has motivated machine-learning methods to construct low-dimensional collective variables for specific objectives, including state discrimination, slow-mode identification, and committor-function approximation. Here we introduce SelfTICA, a self-supervised framework that uses contrastive learning on time-lagged configurations to learn a latent representation of the slow modes governing relevant transitions. Once learned, this representation is frozen and reused across downstream tasks, including collective variables construction, enhanced sampling, free-energy estimation, and committor learning. Compared with direct slow-mode optimization, SelfTICA improves training stability and provides collective variables even from limited and exploratory trajectories, accelerating rare-event sampling and enabling accurate free-energy estimation. The dynamical information encoded during pretraining also accelerates committor learning and enables characterization of transition-state regions. These results show that contrastive learning of slow dynamical representations provides a common foundation for rare-event sampling and mechanistic analysis.
             </div>
 
           </div>
